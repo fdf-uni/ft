@@ -10,7 +10,7 @@ Wir haben mit Aufgabe 1 begonnen, wo wir neben den prinzipiellen Rechenregeln f�
 2. [1/z = z̅](https://www.geogebra.org/m/tgfk5ddr)
 3. [\|z\| = Re(z)+1](https://www.geogebra.org/m/c57fmwd6)
 
-Daraufhin haben wir mithilfe der folgenden Animationen (auch [hier](https://github.com/fdf-uni/ft/assets/tut01) als Videos verfügbar) geometrische Interpretationen der komplexen Addition und Multiplikation wiederholt:
+Daraufhin haben wir mithilfe der folgenden Animationen (auch [hier](https://github.com/fdf-uni/ft/tree/main/assets/tut01) als Videos verfügbar) geometrische Interpretationen der komplexen Addition und Multiplikation wiederholt:
 ### Komplexe Addition
 {:refdef: style="text-align: center;"}
 ![Komplexe Addition](../assets/tut01/ComplexAddition.gif)
