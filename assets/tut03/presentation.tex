@@ -1,0 +1,84 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 3}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{12. \& 13. Mai 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Ergänzung zum letzten Mal}
+	\pause
+	Das Wurzelkriterium ist \emph{strikt} stärker als das Quotientenkriterium: Für
+	\[
+		a_n := \begin{cases} 2^{-n} & \text{falls } n \text{ gerade}, \\ 2^{-n + 1} & \text{falls } n \text{ ungerade}, \end{cases}
+	\]
+	\pause
+	haben wir $\frac{1}{2} \le \sqrt[n]{\lvert a_n \rvert} \le \frac{1}{2} \sqrt[n]{2} \overset{n \to \infty}{\longrightarrow} \frac{1}{2}$, also gilt gemäß \glqq Sandwich-Lemma\grqq{} $\lim_{n \to \infty} \sqrt[n]{\lvert a_n \rvert} = \frac{1}{2}$.
+	\pause
+	Allerdings ist
+	\[
+		\frac{\lvert a_{2n + 1} \rvert}{\lvert a_{2n} \rvert} = \frac{2^{-(2n + 1) + 1}}{2^{- 2 n}} = 1 \qquad \text{und} \qquad \frac{\lvert a_{2n + 2} \rvert}{\lvert a_{2n + 1} \rvert} = \frac{2^{-(2n + 2)}}{2^{-(2n + 1) + 1}} = \frac{1}{4},
+	\]
+	d.h. $\frac{\lvert a_{n + 1} \rvert}{\lvert a_n \rvert}$ konvergiert \emph{nicht}.
+	Das Quotientenkriterium ist hier also im Gegensatz zum Wurzelkriterium nicht anwendbar.
+\end{frame}
+\begin{frame}
+	\frametitle{Kurven}
+	\pause
+	Für Definition einer Kurve und Eigenschaften wie \emph{geschlossen}, \emph{einfach} oder \emph{äquivalent}, s. Vorlesung (im Wesentlichen ist eine Kurve eine stetige Abbildung $z \colon [a, b] \to \Omega \subset \mathbb{C}$ mit $z \in C_p^1([a, b])$).
+	\pause
+	\begin{definition}[Kurve mit umgekehrter Orientierung]
+		$z^{-} \colon [a, b] \to \mathbb{C}, \ t \mapsto z(b + a - t)$.
+	\end{definition}
+\end{frame}
+\begin{frame}
+	\frametitle{Integration entlang von Kurven}
+	\begin{definition}[Kurvenintegral]
+		Gegeben einer Kurve $\gamma$ mit Parametrisierung $z \colon [a, b] \to \mathbb{C}$ und \glqq{}Knickstellen\grqq{} $a = a_0 < \ldots < a_K = b$ definieren wir das \emph{Integral von $f$ entlang $\gamma$} mittels
+		\[
+			\int_{\gamma} f(z) \,\mathrm{d}z := \sum_{k=1}^{K} \int_{a_{k-1}}^{a_k} f(z(t)) z'(t) \,\mathrm{d}t.
+		\]
+	\end{definition}
+	\pause
+	Merkregel für/Intuition zum Faktor $z'(t)$ (rein heuristisch):
+	\pause
+	\begin{itemize}
+		\item \glqq{}Wie bei der Substitutionsregel\grqq{}
+		      \pause
+		\item Bezieht \glqq{}Geschwindigkeit\grqq{} der Parametrisierung mit ein
+		      \pause
+		\item Unabhängigkeit von Parametrisierung (vorausgesetzt, parametrisierte Kurven sind äquivalent im Sinne der Definition aus der Vorlesung)
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{(Holomorphe) Stammfunktionen}
+	\begin{definition}
+		Sei $\Omega \subset \mathbb{C}$ offen und $f \colon \Omega \to \mathbb{C}$.
+		Dann heißt $F \colon \Omega \to \mathbb{C}$ \emph{Stammfunktion (von $f$)}, falls $F$ holomorph in $\Omega$ ist mit $F' = f$.
+	\end{definition}
+	\pause
+	\begin{theorem}
+		Mit $\Omega$, $f$ und $F$ wie oben, gilt für jede Kurve $\gamma$ in $\Omega$ mit Anfangspunkt $w_0$ und Endpunkt $w_1$, dass
+		\[
+			\int_{\gamma} f(z) \,\mathrm{d}z = F(w_1) - F(w_0).
+		\]
+		Insbesondere gilt, für jede geschlossene Kurve $\gamma$ (also mit $w_0 = w_1$):
+		\[
+			\int_{\gamma} f(z) \,\mathrm{d}z = 0.
+		\]
+	\end{theorem}
+\end{frame}
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 4}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{19. \& 20. Mai 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Etwas zu Dreiecken}
+	\pause
+	\begin{theorem}
+		Seien $D \subset \mathbb{C}$ eine offene Kreisscheibe und $f \colon D \to \mathbb{C}$ stetig mit
+		\[
+			\int_T f(z) \,\mathrm{d}z = 0
+		\]
+		für jedes Dreieck $T \subset D$.
+		Dann besitzt $f$ eine Stammfunktion in $D$.
+	\end{theorem}
+	\pause
+	\begin{lemma}[Goursat's lemma]
+		Sei $\Omega \subset \mathbb{C}$ offen und $f \colon \Omega \to \mathbb{C}$ holomorph.
+		Dann gilt für jedes Dreieck $T$, das mitsamt seinem \glqq Inneren\grqq{} in $\Omega$ enthalten ist,
+		\[
+			\int_T f(z) \,\mathrm{d}z = 0.
+		\]
+	\end{lemma}
+\end{frame}
+\begin{frame}
+	\frametitle{Konvexe Mengen (in $\mathbb{C}$)}
+	\pause
+	\begin{definition}
+		Eine Menge $\Omega \subset \mathbb{C}$ heißt \emph{konvex}, falls für alle $w_1, w_2 \in \mathbb{C}$ die Verbindungsstrecke $[w_1, w_2] := \{t w_1 + (1 - t) w_2 : t \in [0, 1]\}$ von $w_1$ nach $w_2$ vollständig in $\Omega$ enthalten ist:
+		\[
+			t w_1 + (1 - t) w_2 \in \Omega \qquad \forall t \in [0, 1]
+		\]
+	\end{definition}
+	\pause
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[] (0, 0) circle (1.5);
+			\coordinate[] (w1) at (-0.7, -0.3);
+			\coordinate[] (w2) at (0.3, 0.5);
+			\node[below left] at (w1) {$w_1$};
+			\node[right] at (w2) {$w_2$};
+			\fill[] (w1) circle (2pt);
+			\fill[] (w2) circle (2pt);
+			\draw[] (w1) -- (w2);
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Sternförmige Mengen (in $\mathbb{C}$)}
+	\pause
+	\begin{definition}
+		Eine Menge $\Omega \subset \mathbb{C}$ heißt bezüglich eines Punktes $z_{0} \in \Omega$ \emph{sternförmig}, falls für jedes $w \in \Omega$ die Verbindungsstrecke $[z_{0}, w] := \{t z_{0} + (1 - t) w : t \in [0, 1]\}$ von $z_{0}$ nach $w$ vollständig in $\Omega$ enthalten ist:
+		\[
+			t z_{0} + (1 - t) w \in \Omega \qquad \forall t \in [0, 1]
+		\]
+	\end{definition}
+	\pause
+	\begin{center}
+		\begin{tikzpicture}
+			\node[star,draw, star points=5, star point height=1cm, star point ratio=2.5, minimum size=3cm] {};
+			\node[label={[shift={(.2,-.5)}]$z_{0}$},circle, inner sep=0pt, minimum size=3pt, fill] (z*) at (0,0) {};
+			\node[label=above:$z$,circle, inner sep=0pt, minimum size=3pt, fill] (z) at (0,.7) {};
+			\draw[dotted] (z*)--(z);
+			\pause
+			\fill[red] (-0.5, -0.8) circle (2pt);
+			\fill[red] (0.5, -0.8) circle (2pt);
+			\draw[red, thick] (-0.5, -0.8) -- (0.5,-0.8);
+			\node[align=center, red] at (0,-1.3) {nicht\\ konvex};
+			\pause
+			\begin{scope}[shift={(6,0)}]
+				\draw[] (0,0) circle (1.5);
+				\pause
+				\draw[] (-0.318198051533946,-0.318198051533946)--(1.06066017177982,1.06066017177982);
+				\pause
+				\draw[densely dashed, cyan] (-0.318198051533946,-0.318198051533946)--(-1.06066017177982,-1.06066017177982);
+				\node[label={[shift={(.2,-.5)}, color=cyan]$z_{0}$},circle, inner sep=0pt, minimum size=3pt, fill, cyan] (z*) at (-0.636396103067893,-0.636396103067893) {};
+				\node[label=above:$z$,circle, inner sep=0pt, minimum size=3pt, fill] (z) at (-.3,.8) {};
+				\draw[dotted] (z*)--(z);
+
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+\end{document}

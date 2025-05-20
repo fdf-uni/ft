@@ -1,0 +1,105 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 2}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{05. \& 06. Mai 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Was bedeutet \glqq Ableitung\grqq{}?}
+	\pause
+	Aus \glqq{}On Proof and Progress in Mathematics\grqq{} von William P. Thurston\footnote{\url{https://arxiv.org/abs/math/9404236}}:
+	\pause
+	\begin{enumerate}[label=(\arabic*)]
+		\item Infinitesimal: the ratio of the infinitesimal change in the value of a function to the infinitesimal change in a function.
+		      \pause
+		\item Symbolic: the derivative of $x^n$ is $n x^{n - 1}$, the derivative of $\sin(x)$ is $\cos(x)$, the derivative of $f \circ g$ is $f' \circ g \cdot g'$, etc.
+		      \pause
+		\item Logical: $f'(x) = d$ if and only if for every $\epsilon$ there is a $\delta$ such that when $0 < \lvert \Delta x \rvert < \delta$,
+		      \[ \left\lvert \frac{f(x + \Delta x) - f(x)}{\Delta x} - d \right\rvert < \epsilon. \]
+		      \pause
+		\item Geometric: the derivative is the slope of a line tangent to the graph of the function if the graph has a tangent.
+		      \pause
+		\item Rate: the instantaneous speed of $f(t)$, when $t$ is time.
+		      \pause
+		\item {\color<10->{blue}{Approximation: The derivative of a function is the best linear approximation to the function near a point.}}
+		      \pause
+		\item {\color<11->{blue}{Microscopic: The derivative of a function is the limit of what you get by looking at it under a microscope of higher and higher power.}}
+	\end{enumerate}
+\end{frame}
+\begin{frame}
+	\glqq{}[...] one person's clear mental image is another person's intimidation:
+	\begin{enumerate}
+		\item[(37)] The derivative of a real-valued function $f$ in a domain $D$ is the Lagrangian section of the cotangent bundle $T^{\ast}(D)$ that gives the connection for for the unique flat connection on the trivial $\mathbb{R}$-bundle $D \times \mathbb{R}$ for which the graph of $f$ is parallel.\grqq{}
+	\end{enumerate}
+\end{frame}
+\begin{frame}
+	\frametitle{Holomorphe Funktionen}
+	\begin{definition}
+		Sei $\Omega \subset \mathbb{C}$ offen.
+		Eine Funktion
+		$$
+			f \colon \Omega \to \mathbb{C}
+		$$
+		heißt \emph{holomorph im Punkt $z_0 \in \Omega$}, falls der Grenzwert
+		$$
+			f'(z_0) = \lim_{\substack{h \to 0 \\ h \in \mathbb{C}}} \frac{f(z_0 + h) - f(z_0)}{h}
+		$$
+		in $\mathbb{C}$ existiert.
+		Wir nennen $f'(z_0)$ die \emph{Ableitung} von $f$ im Punkt $z_0$.
+	\end{definition}
+\end{frame}
+\begin{frame}
+	\frametitle{Die Cauchy-Riemann-Gleichungen}
+	Gegeben $f \colon \Omega \to \mathbb{C}$ betrachten wir die Funktionen $\Re f \colon \Omega \to \mathbb{R}$ und $\Im f \colon \Omega \to \mathbb{R}$ als Funktionen $u, v \colon \mathbb{R}^2 \to \mathbb{R}$ indem wir $z = x + \iu y \in \Omega$ mit $(x, y) \in \tilde{\Omega} \subset \mathbb{R}^2$ identifizieren.
+	\pause
+
+	Hierdurch können wir $f \colon \Omega \to \mathbb{C}$ mit $F \colon \tilde{\Omega} \to \mathbb{R}^2$ identifizieren.
+	\pause
+	\begin{theorem}
+		Die Funktion $f$ ist genau dann holomorph in $z_0$, wenn die mit ihr identifizierte Funktion $F = (u, v)^T$ in $z_0$ (reell) differenzierbar ist und die partiellen Ableitungen in diesem Punkt die Cauchy-Riemann-Gleichungen erfüllen:
+		\[
+			\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \qquad \text{and} \qquad \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}.
+		\]
+	\end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Interpretation}
+	Erinnern wir uns zu Beginn an Charakterisierung (6) der Ableitung, nämlich als beste lineare Approximation.
+	\pause
+
+	Eine $\mathbb{C}$-lineare Abbildung $\mathbb{C} \to \mathbb{C}$ ist gegeben durch $z \mapsto a z$ für ein $a \in \mathbb{C}$.
+\end{frame}
+\begin{frame}
+	\frametitle{$\mathbb{C}$-(Anti-)Linearität}
+	Im folgenden identifizieren wir oft implizit $\mathbb{R}^2$ und $\mathbb{C}$.
+	\pause
+	\begin{enumerate}
+		\item[-] Die \emph{reelle} Ableitung $DF \colon \mathbb{R}^2 \to \mathbb{R}^2$ von $F$ ist linear -- allerdings $\mathbb{R}$-linear, d.h. $\forall \lambda \in \mathbb{R}: DF(\lambda x) = \lambda DF(x)$.
+		      \pause
+
+		      Diese Gleichheit gilt nicht zwingend $\forall \lambda \in \mathbb{C}$!
+		      \pause
+		\item[-] Fakt: Die $\mathbb{R}$-linearen Abbildungen $\mathbb{C} \to \mathbb{C}$ sind direkte Summe $\mathbb{C}$-linearer und $\mathbb{C}$-anti-linearer\footnote<4->{Anti-linear bedeutet, dass $f(\lambda x) = \overline{\lambda} f(x)$.} Abbildungen $\mathbb{C} \to \mathbb{C}$.
+		      \pause
+
+		      In der Tat, eine $\mathbb{R}$-lineare Abbildung $L \colon \mathbb{C} \to \mathbb{C}$ kann zerlegt werden in $\frac{1}{2}(L(z) - \iu L(\iu z))$ ($\mathbb{C}$-linear) und $\frac{1}{2}(L(z) + \iu L(\iu z))$ ($\mathbb{C}$-anti-linear).\footnote<5->{Dies erinnert eventuell an Funktionen $\mathbb{R} \to \mathbb{R}$ als direkte Summe achsen- und punktsymmetrischer Funktionen. Dies geht natürlich auch ein wenig allgemeiner mittels beliebiger Involutionen, s. beispielsweise \url{https://math.stackexchange.com/questions/4286284}.}
+		      \pause
+		\item[-] Die Cauchy-Riemann-Gleichungen garantieren, dass die Abbildung $D F$ $\mathbb{C}$-linear ist, d.h. $\mathbb{C}$-anti-linearen Teil $=0$ hat.
+	\end{enumerate}
+\end{frame}
+\end{document}
