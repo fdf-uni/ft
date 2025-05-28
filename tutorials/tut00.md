@@ -10,18 +10,18 @@ Wir haben mit Aufgabe 1 begonnen, wo wir neben den prinzipiellen Rechenregeln f�
 2. [1/z = z̅](https://www.geogebra.org/m/tgfk5ddr)
 3. [\|z\| = Re(z)+1](https://www.geogebra.org/m/c57fmwd6)
 
-Daraufhin haben wir mithilfe der folgenden Animationen (auch [hier](https://github.com/fdf-uni/ft/tree/main/assets/tut01) als Videos verfügbar) geometrische Interpretationen der komplexen Addition und Multiplikation wiederholt:
+Daraufhin haben wir mithilfe der folgenden Animationen (auch [hier](https://github.com/fdf-uni/ft/tree/main/assets/tut00) als Videos verfügbar) geometrische Interpretationen der komplexen Addition und Multiplikation wiederholt:
 ### Komplexe Addition
 {:refdef: style="text-align: center;"}
-![Komplexe Addition](../assets/tut01/ComplexAddition.gif)
+![Komplexe Addition](../assets/tut00/ComplexAddition.gif)
 {: refdef}
 ### Komplexe Multiplikation
 {:refdef: style="text-align: center;"}
-![Komplexe Multiplikation](../assets/tut01/ComplexMultiplicationIntuition.gif)
+![Komplexe Multiplikation](../assets/tut00/ComplexMultiplicationIntuition.gif)
 {: refdef}
 ### Komplexe Multiplikation als Rotation
 {:refdef: style="text-align: center;"}
-![Komplexe Multiplikation als Rotation](../assets/tut01/Rotation.gif)
+![Komplexe Multiplikation als Rotation](../assets/tut00/Rotation.gif)
 {: refdef}
 
 Hieraufhin haben wir bei (iii) kurz über das Standardskalarprodukt auf $$\mathbb{C}$$ geredet und mithilfe der (teils bekannten) Standardbeweisstrategie der Parallelogramm-Gleichung die Aufgabe gelöst.
