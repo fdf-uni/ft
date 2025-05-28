@@ -23,6 +23,7 @@ Wichtiger sind vermutlich eher die einzelnen Tutoriumsseiten (s. u.), welche wie
 
 ## Links zu den (bisherigen) Tutoriumsseiten
 
+- [Tutorium 0](./tutorials/tut00.md)
 - [Tutorium 1](./tutorials/tut01.md)
 - [Tutorium 2](./tutorials/tut02.md)
 - [Tutorium 3](./tutorials/tut03.md)

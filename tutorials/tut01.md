@@ -2,58 +2,41 @@
 
 [Zurück zur Startseite](../README.md)
 
+[Foliensatz](../assets/tut01/presentation.pdf)
+
 ## Kurzprotokoll
 
-Wir haben mit Aufgabe 1 begonnen, wo wir neben den prinzipiellen Rechenregeln für Addition und komplexer Konjugation für Aufgabe (i) die folgenden Geogebra Applets für etwas geometrische Intuition besprachen:
+Nach einer kurzen Wiederholung von Holomorphie und ein wenig Intuition zu den Cauchy-Riemann-Gleichungen (s. Foliensatz), besprachen wir Aufgaben 1 bis 3.
 
-1. [\|z + 1\| = \|z + 3\|](https://www.geogebra.org/m/byyfpkjy)
-2. [1/z = z̅](https://www.geogebra.org/m/tgfk5ddr)
-3. [\|z\| = Re(z)+1](https://www.geogebra.org/m/c57fmwd6)
+Hinsichtlich der Cauchy-Riemann-Gleichungen haben wir auch kurz über konforme Abbildungen geredet, was in Kapitel 6, Aufgabe 2 von Stein, Shakarchi genauer formuliert wird (jetzt aber vielleicht noch nicht unbedingt sauber bewiesen werden kann und dem Vorlesungsstoff vorgreifen würde).
 
-Daraufhin haben wir mithilfe der folgenden Animationen (auch [hier](https://github.com/fdf-uni/ft/tree/main/assets/tut01) als Videos verfügbar) geometrische Interpretationen der komplexen Addition und Multiplikation wiederholt:
-### Komplexe Addition
-{:refdef: style="text-align: center;"}
-![Komplexe Addition](../assets/tut01/ComplexAddition.gif)
-{: refdef}
-### Komplexe Multiplikation
-{:refdef: style="text-align: center;"}
-![Komplexe Multiplikation](../assets/tut01/ComplexMultiplicationIntuition.gif)
-{: refdef}
-### Komplexe Multiplikation als Rotation
-{:refdef: style="text-align: center;"}
-![Komplexe Multiplikation als Rotation](../assets/tut01/Rotation.gif)
-{: refdef}
+Eine schöne Animation, welche auch kurz gezeigt wurde, findet sich in [diesem Youtube-Video](https://www.youtube.com/watch?v=0CHZMY02Dhk&t=640s).
 
-Hieraufhin haben wir bei (iii) kurz über das Standardskalarprodukt auf $$\mathbb{C}$$ geredet und mithilfe der (teils bekannten) Standardbeweisstrategie der Parallelogramm-Gleichung die Aufgabe gelöst.
-
-Danach haben wir über die übrigen Aufgaben geredet.
+Zum Ende des Tutoriums besprachen wir noch kurz eine alternative Interpretation der Cauchy-Riemann-Gleichungen, nämlich dass diese sicher stellen, dass die Jacobi-Matrix von $$F$$ zu einer komplexen Zahl korrespondiert (mittels des Isomorphismus von Ringen/Körpern
+\\[
+  \mathbb{R}^{2 \times 2} \ni \begin{pmatrix} a & -b \\\\ b & a \end{pmatrix} \mapsto a + b \mathrm{i} \in \mathbb{C}
+\\]
+).
+Auch dies ist natürlich nur eine von vielen möglichen Interpretation, s. zum Beispiel auch [Wikipedia](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Riemann_equations#Interpretation_and_reformulation), [stackexchange](https://math.stackexchange.com/questions/3818096/is-there-any-intuition-or-meaning-regarding-cauchy-riemann-equations) oder Seiten 143 bis 145 von [Wegert - Visual Complex Functions](https://link.springer.com/book/10.1007/978-3-0348-0180-5) (zugänglich über den Bibliotheks-Login).
 
 ## Zum Mitnehmen
 
 ### Aufgabe 1
-- Komplexe Zahlen können viele geometrische Konstruktionen beschreiben, beispielsweise Kreise, Mittelsenkrechten, Inversion am (Einheits-)kreis, Spiegelung an Achsen oder Parabeln.
-- Komplexe Multiplikation mit $$r e^{i \varphi}$$ entspricht Skalierung um den Faktor $$r$$ und Rotation um den Winkel $$\varphi$$.
-- "Faustregel": Addition klappt besser mit kartesischen Koordinaten, Multiplikation klappt besser mit Polarkoordinaten.
-- Rechenregeln für komplexes Konjugieren.
-- Ist $$\lvert z \rvert = 1$$ gegeben, so kann es hilfreich sein, $$z = e^{i \varphi}$$ für $$\varphi \in [0, 2\pi)$$ zu schreiben.
+- Definition von Holomorphie und Cauchy-Riemann-Gleichungen.
+- "Holomorphie ist eine ziemlich restriktive Eigenschaft."
+- "Komplexe Konjugation und Holomorphie vertragen sich nicht gut."
 
 ### Aufgabe 2
-- Geometrische Reihe (Konvergenzverhalten & Grenzwert).
-- Konvergenzverhalten in Abhängigkeit des Konvergenzradius (und Definition des Letzteren).
-- Cauchy-Hadamard und "Quotientenformel" (à la d'Alembert/Cauchy) zur Berechnung des Konvergenzradius.
-- Potenzreihen können innerhalb des Konvergenkreises termweise differenziert werden und der Konvergenzradius ändert sich hierdurch nicht.
+- Das Wurzelkriterium ist "stärker" als das Quotientenkriterium.
+  Ein Beispiel, das zeigt, dass es wirklich _strikt_ stärker ist, findet sich in Tutorium 3 als kurzer Nachtrag.
+- Trick, Ungleichungen iterativ anzuwenden, um Ungleichungen "im Grenzwert" zu beweisen (vgl. z.B. auch Beweis des Banachschen Fixpunktsatzes, wie er etwa in [Forster - Analysis 2](https://link.springer.com/book/10.1007/978-3-658-45812-6) gefunden werden kann).
 
 ### Aufgabe 3
-- Definition partieller Ableitung und totaler Ableitung.
-- Form der totalen Ableitung in Abhängigkeit der partiellen Ableitungen (Spalten der Jakobimatrix sind partielle Ableitungen).
-- Um Nicht-Differenzierbarkeit zu zeigen, kann oft ein Widerspruchsbeweis hilfreich sein.
-- Stetig differenzierbar $$\iff$$ stetig partiell differenzierbar.
+- Der Entwicklungspunkt von Potenzreihen kann _innerhalb des Konvergenzkreises_ verschoben werden.
+- Binomischer Lehrsatz.
+- Rigoroses Argumentieren beim Vertauschen von Doppelreihen (z.B. Fubini mit Zählmaß (streng genommen in dieser Form eigentlich Pringsheim zuzuschreiben und in gewisser Weise implizit in manchen Beweisen von Fubini verwendet) oder mithilfe von summierbaren Familien, vgl. [Königsberger  - Analysis 1](https://link.springer.com/book/10.1007/978-3-642-18490-1)).
 
 ## Fun Facts
 
-Die Frage nach der Konvergenz einer Potenzreihe auf dem Rand des Konvergenzkreises ($$\lvert z \rvert = R$$) kann relativ weit geführt werden.
-Beispielsweise kann man sich überlegen, welche Teilmengen resultieren können, wenn diese genau die Punkte, für welche die Potenzreihe nicht konvergiert, beinhalten.
-$$\sum_{k=0}^{\infty} z^n$$ konvergiert für alle $$\lvert z \rvert = 1$$ mit $$z \neq 1$$ und divergiert für $$z = 1$$.
-Mittels Multiplikation von $$e^{\mathrm{i} \varphi}$$ und Addition findet man nun recht schnell, dass jede endliche Teilmenge von $$\partial B_1(0)$$ als "Nichtkonvergenzbereich" möglich ist.
-
-Für eine deutlich ausführlichere Diskussion solcher Resultate mit Referenzen kann man beispielsweise [diesen Thread](https://mathoverflow.net/questions/49395/behaviour-of-power-series-on-their-circle-of-convergence) auf Math Overflow (und die dort verlinkten Texte) lesen.
+Die Voraussetzung von Aufgabe 1 (iii) kann deutlich abgeschwächt werden zu "$$\mathop{\text{Re}}(f)$$ beschränkt" statt "$$\mathop{\text{Re}}(f)$$ konstant".
+Dies ist eine Konsequenz des Satzes von Liouville, welchen wir später in der Vorlesung sehen werden.

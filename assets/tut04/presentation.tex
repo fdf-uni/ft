@@ -2,16 +2,19 @@
 
 \usepackage[ngerman]{babel}
 \usepackage{amsmath, amssymb}
-\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{qrcode}
 
-\usetikzlibrary{shapes}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings, hobby, shapes}
+\tikzset{tikzPathWithMidArrow/.style={draw=#1,postaction={decorate, decoration={show path construction, lineto code={\path [postaction={decorate,decoration={markings, mark=at position .5 with {\arrow[#1]{stealth}}}}] (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);},curveto code={\path [postaction={decorate,decoration={markings, mark=at position .5 with {\arrow[#1]{stealth}}}}] (\tikzinputsegmentfirst) .. controls (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb) .. (\tikzinputsegmentlast);}}}}}
 
 \usetheme{Boadilla}
 
 \author[\url{https://fdf-uni.github.io/ft}]{}
 \title{Tutorium 4}
 \subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
-\date{19. \& 20. Mai 2025}
+\date{26. \& 27. Mai 2025}
 
 \newcommand{\iu}{\mathrm{i}}
 \renewcommand{\Re}{\operatorname{Re}}
@@ -22,82 +25,147 @@
 	\titlepage
 \end{frame}
 \begin{frame}
-	\frametitle{Etwas zu Dreiecken}
-	\pause
-	\begin{theorem}
-		Seien $D \subset \mathbb{C}$ eine offene Kreisscheibe und $f \colon D \to \mathbb{C}$ stetig mit
-		\[
-			\int_T f(z) \,\mathrm{d}z = 0
-		\]
-		für jedes Dreieck $T \subset D$.
-		Dann besitzt $f$ eine Stammfunktion in $D$.
-	\end{theorem}
-	\pause
-	\begin{lemma}[Goursat's lemma]
-		Sei $\Omega \subset \mathbb{C}$ offen und $f \colon \Omega \to \mathbb{C}$ holomorph.
-		Dann gilt für jedes Dreieck $T$, das mitsamt seinem \glqq Inneren\grqq{} in $\Omega$ enthalten ist,
-		\[
-			\int_T f(z) \,\mathrm{d}z = 0.
-		\]
-	\end{lemma}
+	\frametitle{Organisatorisches}
+	\begin{center}
+		\qrcode[height=6cm, level=H]{https://fdf-uni.github.io/ft}
+
+		\vspace*{0.3cm}
+		\noindent\Large\href{https://fdf-uni.github.io/ft}{https://fdf-uni.github.io/ft}
+	\end{center}
 \end{frame}
 \begin{frame}
-	\frametitle{Konvexe Mengen (in $\mathbb{C}$)}
-	\pause
+	\frametitle{Homotope Kurven}
 	\begin{definition}
-		Eine Menge $\Omega \subset \mathbb{C}$ heißt \emph{konvex}, falls für alle $w_1, w_2 \in \mathbb{C}$ die Verbindungsstrecke $[w_1, w_2] := \{t w_1 + (1 - t) w_2 : t \in [0, 1]\}$ von $w_1$ nach $w_2$ vollständig in $\Omega$ enthalten ist:
-		\[
-			t w_1 + (1 - t) w_2 \in \Omega \qquad \forall t \in [0, 1]
-		\]
+		Sei $\Omega \subset \mathbb{C}$ offen und seien $\gamma_0,\gamma_1$ zwei Kurven in $\Omega$, die im gleichen Punkt $\alpha$ beginnen und im gleichen Punkt $\beta$ enden. Die Kurven $\gamma_0$ und $\gamma_1$ heißen \emph{homotop} in $\Omega$,wenn es für alle Parametrisierungen $z_0,z_1:[a,b]\to\Omega$ von $\gamma_0$ und $\gamma_1$ eine stetige Abbildung $\Gamma:[a,b]\times[0,1]\to\Omega,(t,s)\to\Gamma_s(t)$ gibt mit
+		\begin{align*}
+			\Gamma_s(a) & = \alpha, & \Gamma_s(b) & =\beta  & \forall s\in[0,1] \\
+			\Gamma_0(t) & = z_0(t), & \Gamma_1(t) & =z_1(t) & \forall t\in[a,b]
+		\end{align*}
 	\end{definition}
 	\pause
 	\begin{center}
 		\begin{tikzpicture}
-			\draw[] (0, 0) circle (1.5);
-			\coordinate[] (w1) at (-0.7, -0.3);
-			\coordinate[] (w2) at (0.3, 0.5);
-			\node[below left] at (w1) {$w_1$};
-			\node[right] at (w2) {$w_2$};
-			\fill[] (w1) circle (2pt);
-			\fill[] (w2) circle (2pt);
-			\draw[] (w1) -- (w2);
+			\draw[dotted, closed hobby] plot coordinates {(0,0) (.5,-.5) (1,-.5) (2,-.5) (2.5,.5) (3,2) (2,2.5) (1,2.7) (0,1.5)};
+			\node[label=left:$\alpha$,circle, inner sep=0pt, minimum size=3pt, fill] (alpha) at (0.2,0.2) {};
+			\node[label=right:$\beta$,circle, inner sep=0pt, minimum size=3pt, fill] (beta) at (2.85,1.85) {};
+
+			\path[tikzPathWithMidArrow, orange]
+			(alpha).. controls (.8,3) and (2.4,2.6)..(beta)
+			(alpha).. controls (.8,-0.8) and (2.5,0) ..(beta);
+			\foreach \s in {.1,.3,.5,.7,.9}{
+					\pgfmathsetmacro\firstY{(1-\s)*3+\s*(-1)}
+					\pgfmathsetmacro\secondY{(1-\s)*2.5+\s*0}
+					\path[tikzPathWithMidArrow,dashed]
+					(alpha).. controls (.8,\firstY) and (2.5,\secondY) .. (beta);
+				}
+
+			\node[above] (gam_0) at (.8,1.9) {$\gamma_0$};
+			\node[below] (gam_1) at (2.1,.1) {$\gamma_1$};
+			\node[label=above:$\Gamma_s(t)$,circle, inner sep=0pt, minimum size=3pt, fill] (beta) at (1.6,1.58) {};
+			\node[above] (Omega) at (.4,2.5) {$\Omega$};
 		\end{tikzpicture}
 	\end{center}
 \end{frame}
 \begin{frame}
-	\frametitle{Sternförmige Mengen (in $\mathbb{C}$)}
+	\frametitle{Homotopieinvarianz des Kurvenintegrals}
+	\begin{theorem}
+		Sei $\Omega \subset \mathbb{C}$ offen, $f:\Omega\to \mathbb{C}$ holomorph und seien $\gamma_0$, $\gamma_1$ in $\Omega$ homotope Kurven.
+		Dann ist
+		\[
+			\int_{\gamma_0} f(z) \,\mathrm{d}z = \int_{\gamma_1} f(z) \,\mathrm{d}z.
+		\]
+	\end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Zusammenhang}
 	\pause
 	\begin{definition}
-		Eine Menge $\Omega \subset \mathbb{C}$ heißt bezüglich eines Punktes $z_{0} \in \Omega$ \emph{sternförmig}, falls für jedes $w \in \Omega$ die Verbindungsstrecke $[z_{0}, w] := \{t z_{0} + (1 - t) w : t \in [0, 1]\}$ von $z_{0}$ nach $w$ vollständig in $\Omega$ enthalten ist:
-		\[
-			t z_{0} + (1 - t) w \in \Omega \qquad \forall t \in [0, 1]
-		\]
+		Eine offene Menge $\Omega \subset \mathbb{C}$ heißt \emph{zusammenhängend}, falls es nicht zwei nicht-leere, disjunkte, offene Mengen $U_1, U_2 \subseteq \mathbb{C}$ mit $\Omega = U_1 \cup U_2$ gibt.\\
+		Sie heißt \emph{wegzusammenhängend}, falls für alle $z_1, z_2 \in \Omega$ eine stetige Kurve $\gamma \colon [0, 1] \to \mathbb{C}$ mit $\gamma(0) = z_1$ und $\gamma(1) = z_2$ existiert.
 	\end{definition}
 	\pause
+	\emph{Bemerkung:} Für $\Omega \subset \mathbb{C}$ offen sind zusammenhängend und wegzusammenhängend äquivalent. (Allgemein gilt nur \glqq$\Leftarrow$\grqq{} in topologischen Räumen, \glqq$\Rightarrow$\grqq{} benötigt Zusatzvoraussetzungen.)
+	\pause
+	\begin{definition}
+		Unter einem \emph{Gebiet} verstehen wir eine nicht-leere, offene, zusammenhängende Menge $\Omega \subset \mathbb{C}$.
+	\end{definition}
+\end{frame}
+\begin{frame}
+	\frametitle{Einfach zusammenhängende Mengen}
+	\pause
+	\begin{definition}
+		Eine zusammenhängende, offene Menge $\Omega \subset \mathbb{C}$ heißt \emph{einfach zusammenhängend}, falls je zwei Kurven mit denselben Endpunkten homotop in $\Omega$ sind (äquivalent: jede geschlossene Kurve ist homotop zu einer konstanten Kurve, man sagt auch, sie ist \emph{nullhomotop}).
+	\end{definition}
+	\pause
+	Intuition: Man kann in der Menge jedes \glqq Lasso zusammenziehen\grqq:
+
 	\begin{center}
 		\begin{tikzpicture}
-			\node[star,draw, star points=5, star point height=1cm, star point ratio=2.5, minimum size=3cm] {};
-			\node[label={[shift={(.2,-.5)}]$z_{0}$},circle, inner sep=0pt, minimum size=3pt, fill] (z*) at (0,0) {};
-			\node[label=above:$z$,circle, inner sep=0pt, minimum size=3pt, fill] (z) at (0,.7) {};
-			\draw[dotted] (z*)--(z);
+			\filldraw[dotted, closed hobby, fill=black!5] plot coordinates {(0,0) (.5,-.5) (1,-.5) (2,-.5) (2.5,.5) (3,2) (2,2.5) (1,2.7) (0,1.5)};
+			\node[above] (Omega) at (.4,2.5) {$\Omega_1$};
 			\pause
-			\fill[red] (-0.5, -0.8) circle (2pt);
-			\fill[red] (0.5, -0.8) circle (2pt);
-			\draw[red, thick] (-0.5, -0.8) -- (0.5,-0.8);
-			\node[align=center, red] at (0,-1.3) {nicht\\ konvex};
+			\node[] at (1.5,-1.5) {einfach zusammenhängend};
 			\pause
-			\begin{scope}[shift={(6,0)}]
-				\draw[] (0,0) circle (1.5);
-				\pause
-				\draw[] (-0.318198051533946,-0.318198051533946)--(1.06066017177982,1.06066017177982);
-				\pause
-				\draw[densely dashed, cyan] (-0.318198051533946,-0.318198051533946)--(-1.06066017177982,-1.06066017177982);
-				\node[label={[shift={(.2,-.5)}, color=cyan]$z_{0}$},circle, inner sep=0pt, minimum size=3pt, fill, cyan] (z*) at (-0.636396103067893,-0.636396103067893) {};
-				\node[label=above:$z$,circle, inner sep=0pt, minimum size=3pt, fill] (z) at (-.3,.8) {};
-				\draw[dotted] (z*)--(z);
 
+			\path[tikzPathWithMidArrow]
+			(0.2,0.2).. controls (.8,3) and (2.4,2.6).. (2.85,1.85) .. controls (2.5,0) and (.8,-0.8) .. (0.2,0.2);
+			\pause
+			\path[tikzPathWithMidArrow, dashed]
+			(0.5, 0.5).. controls (.8,2.2) and (2.3,2).. (2.35,1.35) .. controls (2.5,0.7) and (.8,-0.1) .. (0.5, 0.5);
+			\pause
+			\path[tikzPathWithMidArrow, dashed, rotate around={23:(1.4,1.1)}] (1.4,1.1) ellipse (0.2 and 0.12);
+			\pause
+			\fill[] (1.4, 1.1) circle (1pt);
+			\pause
+
+			\begin{scope}[xshift=5cm]
+				\filldraw[dotted, closed hobby, fill=black!5] plot coordinates {(0,0) (.5,-.5) (1,-.5) (2,-.5) (2.5,.5) (3,2) (2,2.5) (1,2.7) (0,1.5)};
+				\filldraw[dotted, fill=white] (1.4, 1.1) circle (0.5);
+				\node[above] (Omega) at (.4,2.5) {$\Omega_2$};
+				\pause
+				\node[] at (1.5,-1.5) {nicht einfach zusammenhängend};
+				\pause
+				\path[tikzPathWithMidArrow]
+				(0.2,0.2).. controls (.8,3) and (2.4,2.6).. (2.85,1.85) .. controls (2.5,0) and (.8,-0.8) .. (0.2,0.2);
+				\pause
+				\path[tikzPathWithMidArrow, dashed]
+				(0.5, 0.5).. controls (.8,2.2) and (2.3,2).. (2.35,1.35) .. controls (2.5,0.7) and (.8,-0.1) .. (0.5, 0.5);
+				\pause
+				\draw[dashed, red] (1.4, 1.1) circle (0.55);
 			\end{scope}
 		\end{tikzpicture}
 	\end{center}
+\end{frame}
+\begin{frame}
+	\frametitle{Cauchysche Integralformel}
+	\pause
+	\begin{theorem}
+		Seien $\Omega \subset \mathbb{C}$ offen und $f \colon \Omega \to \mathbb{C}$ holomorph.
+		Dann ist $f$ beliebig oft (komplex) differenzierbar in $\Omega$ und für jede Kreisscheibe $D$ mit $\overline{D} \subset \Omega$ gilt mit $C := \partial D$, $z \in D$ und $n \in \mathbb{N}_0$, dass
+		\[
+			f^{(n)}(z) = \frac{n!}{2 \pi \iu} \int_{C} \frac{f(\zeta)}{(\zeta - z)^{n + 1}} \,\mathrm{d}\zeta.
+		\]
+	\end{theorem}
+	\pause
+	Hieraus folgt beispielsweise auch folgende Mittelwertseigenschaft (für geeignete $z$ und $r$):
+	\[
+		f(z) = \frac{1}{2 \pi} \int_{0}^{2 \pi} f(z + r \mathrm{e}^{\iu \varphi}) \,\mathrm{d}\varphi.
+	\]
+\end{frame}
+\begin{frame}
+	\frametitle{Holomorphe Funktionen sind analytisch}
+	\pause
+	\begin{theorem}
+		Sei $\Omega \subset \mathbb{C}$ und $f \colon \Omega \to \mathbb{C}$ holomorph.
+		Dann ist $f$ analytisch in $\Omega$ und für jedes $z_0 \in \Omega$ gilt
+		\[
+			f(z) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(z_0)}{n!}(z - z_0)^n, \qquad \lvert z - z_0 \rvert < \operatorname{dist}(z_0, \partial \Omega).
+		\]
+	\end{theorem}
+	\pause
+	\begin{theorem}[Identitätssatz]
+		Sei $\Omega \subset \mathbb{C}$ offen und zusammenhängend und seien $f, g \colon \Omega \to \mathbb{C}$ analytisch in $\Omega$.
+		Falls es eine konvergente Folge $(w_k) \subset \Omega$ von paarweise verschiedenen Punkten mit Grenzwert in $\Omega$ gibt, sodass $f(w_k) = g(w_k)$ für alle $k$, so gilt $f(z) = g(z)$ für alle $z \in \Omega$.
+	\end{theorem}
 \end{frame}
 \end{document}
