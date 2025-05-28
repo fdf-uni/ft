@@ -53,7 +53,7 @@ Danach haben wir über die übrigen Aufgaben geredet.
 
 Die Frage nach der Konvergenz einer Potenzreihe auf dem Rand des Konvergenzkreises ($$\lvert z \rvert = R$$) kann relativ weit geführt werden.
 Beispielsweise kann man sich überlegen, welche Teilmengen resultieren können, wenn diese genau die Punkte, für welche die Potenzreihe nicht konvergiert, beinhalten.
-$$\sum_{k=0}^{\infty} z^n$$ konvergiert für alle $$\lvert z \rvert = 1$$ mit $$z \neq 1$$ und divergiert für $$z = 1$$.
+$$\sum_{k=0}^{\infty} \frac{z^n}{n}$$ konvergiert für alle $$\lvert z \rvert = 1$$ mit $$z \neq 1$$ und divergiert für $$z = 1$$.
 Mittels Multiplikation von $$e^{\mathrm{i} \varphi}$$ und Addition findet man nun recht schnell, dass jede endliche Teilmenge von $$\partial B_1(0)$$ als "Nichtkonvergenzbereich" möglich ist.
 
 Für eine deutlich ausführlichere Diskussion solcher Resultate mit Referenzen kann man beispielsweise [diesen Thread](https://mathoverflow.net/questions/49395/behaviour-of-power-series-on-their-circle-of-convergence) auf Math Overflow (und die dort verlinkten Texte) lesen.
