@@ -1,0 +1,310 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{polynom}
+\usepackage{fontawesome5}
+
+% Remove section numbers
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}
+\theoremstyle{definition}
+\newtheorem{example}{Beispiel}
+
+\title{Recap zur Partialbruchzerlegung}
+\author{}
+\date{\vspace*{-1.25cm}}
+
+\newcommand{\iu}{\mathrm{i}}
+
+\begin{document}
+\maketitle
+\section{Ziel}
+Gegeben einer auf $\mathbb{C}$ definierten rationalen Funktion
+\[
+	R(z) = \frac{P(z)}{Q(z)},
+\]
+d.h. $P(z) = a (z - w_1)^{r_1} (z - w_2)^{r_2} \cdots (z - w_n)^{r_n}$ und $Q(z) = b (z - z_1)^{s_1} (z - z_2)^{s_2} \cdots (z - z_m)^{s_m}$ sind Polynome\footnote{Man beachte, dass aufgrund des Fundamentalsatzes der Algebra in der Tat eindeutige $a, b, w_1, \dots, w_n, z_1, \dots, z_m \in \mathbb{C}$ und $r_1, \dots, r_n, s_1, \dots, s_m \in \mathbb{N}$ existieren, sodass $P$ und $Q$ von der obigen Form sind. Wir nehmen zudem an, dass $w_i \neq z_j$ für alle $i = 1, \dots, n$, $j = 1, \dots, m$. Ist dies nicht der Fall, so kann man schlichtweg kürzen.}, ist gewollt, $R$ umzuschreiben zu
+\begin{equation}\label{eq:partial_fraction_decomposition}
+	R(z) = \tilde{P}(z) + \sum_{i=1}^{m} \sum_{j=1}^{s_i} \frac{c_{i,j}}{(z - z_i)^{j}},
+\end{equation}
+wobei $\tilde{P}$ ein Polynom über $\mathbb{C}$ mit $\operatorname{grad}(\tilde{P}) = \operatorname{grad}(P) - \operatorname{grad}(Q)$ (insbesondere also $\tilde{P} = 0$ falls $\operatorname{grad}(P) < \operatorname{grad}(Q)$) ist und die $c_{i, j} \in \mathbb{C}$ konstant sind.
+
+Eine berechtigte Frage wäre, ob dies überhaupt immer möglich ist, worauf der folgende Satz eine Antwort liefert:
+\begin{theorem}[Hauptsatz der Partialbruchzerlegung für komplexwertige Funktionen]
+	Jede rationale Funktion über $\mathbb{C}$ besitzt eine Zerlegung von der Form aus Gleichung (\ref{eq:partial_fraction_decomposition}), genannt \emph{Partialbruchzerlegung}.
+\end{theorem}
+Wir beweisen diesen Satz an dieser Stelle nicht, allerdings folgt er eigentlich direkt aus dem unten beschriebenen Verfahren zur Berechnung von $\tilde{P}$ und der $c_{i, j}$.
+\section{Motivation}
+Mit Hinblick auf die bisher gesehenen Eigenschaften des Kurvenintegrals (über geschlossene Kurven) wird recht schnell klar, weshalb eine Darstellung wie in Gleichung (\ref{eq:partial_fraction_decomposition}) nützlich ist (Partialbruchzerlegung ist aber auch für die Auswertung reeller Integrale auf \glqq klassische\grqq{} Art und Weise sowie viele weitere Anwendungen äußert praktisch).
+Denn während es zunächst nicht offensichtlich sein kann, was $\int_{\gamma} R(z) \,\mathrm{d}z$ ist (man betrachte beispielsweise $\int_{C_{1/2}(0)} \frac{z^6-10z+4}{z^5 - 3 z^3 - 4 z} \,\mathrm{d}z$), so ist dies in Partialbruchzerlegung recht klar.
+Aus Linearität des Kurvenintegrals folgt für eine Funktion $R$ wie in (\ref{eq:partial_fraction_decomposition}) nämlich:
+\[
+	\int_{\gamma} R(z) \,\mathrm{d}z = \int_{\gamma} \tilde{P}(z) \,\mathrm{d}z + \sum_{i=1}^{m} \sum_{j=1}^{s_i} \int_{\gamma} \frac{c_{i,j}}{(z - z_i)^j} \,\mathrm{d}z.
+\]
+Ist die Kurve $\gamma$ geschlossen, so verschwindet das erste Integral gemäß des Satzes von Cauchy und für die übrigen Integrale können wir beispielsweise die Cauchysche Integralformel anwenden, welche liefert, dass
+\[
+	\int_{\gamma} \frac{c_{i, j}}{(z - z_i)^j} \,\mathrm{d}z = \begin{cases} 2 \pi \iu c_{i,1} & \text{falls } z_i \text{ innerhalb von $\gamma$ und } j = 1, \\ 0 & \text{sonst,} \end{cases}
+\]
+zumindest sofern $\gamma$ positiv orientiert ist und jede der Polstellen $z_i$ höchstens einmal umläuft.
+Insgesamt erhalten wir also beinahe sofort, dass unter diesen Voraussetzungen
+\[
+	\int_{\gamma} R(z) \,\mathrm{d}z = 2 \pi \iu \sum_{z_i} c_{i, 1}
+\]
+gilt, wobei die Summe über all diejenigen Nullstellen $z_i$ von $Q$ läuft, welche im Inneren der Kurve $\gamma$ enthalten sind.
+
+Partialbruchzerlegung wirkt hier vielleicht ein wenig \glqq verschwenderisch\grqq{}, nachdem wir alle Koeffizienten $c_{i, j}$ für $j \ge 2$ nicht benötigen und in der Tat kann dies durch den Residuensatz, welchen wir später in der Vorlesung sehen werden, umgangen werden.
+Letztendlich ist hier aber auch die Idee, die Koeffizienten $c_{i, 1}$ direkt zu berechnen, wofür wir weiter unten auch eine Möglichkeit beschreiben, die dieselbe wie die aus der Vorlesung ist.
+
+Als weitere Motivation sei angemerkt, dass wir mithilfe der geometrischen Reihe und termweiser Differentiation recht leicht die Potenzreihenentwicklung von Termen der Form $\frac{1}{(z - z_0)^n}$ bestimmen können.
+Mittels Partialbruchzerlegung ist dies also auch für rationale Funktionen gut machbar (vgl. das Beispiel hierzu unten).
+\section{Verfahren}
+Es verbleibt die Frage, wie $R$ in die gewünschte Form gebracht werden kann, was wir an dieser Stelle beschreiben.
+\begin{enumerate}
+	\item Zunächst verwendet man Polynomdivision für den Term $\frac{P(z)}{Q(z)}$, um $P(z) = \tilde{P}(z) Q(z) + L(z)$, also $R(z) = \tilde{P}(z) + \frac{L(z)}{Q(z)}$ zu schreiben, wobei der Grad des Polynoms $L$ nun strikt kleiner als der von $Q$ ist.
+	      Gilt bereits $\operatorname{grad}(P) < \operatorname{grad}(Q)$, so kann dieser Schritt übersprungen werden.
+	\item Nun wählen wir folgenden Ansatz: Wir schreiben
+	      \begin{equation}\label{eq:ansatz}
+		      R(z) - \tilde{P}(z) = \sum_{i=1}^{m} \sum_{j=1}^{s_i} \frac{c_{i,j}}{(z - z_i)^{j}},
+	      \end{equation}
+	      wobei die $c_{i, j}$ aktuell noch Variablen sind.
+	      Hierbei ist zu beachten, dass wir also für jede Nullstelle $z_i$ von $Q$ der Ordnung $s_i$ die Terme $\frac{c_i}{(z - z_i)^1}, \frac{c_i}{(z - z_i)^2}, \dots, \frac{c_i}{(z - z_i)^{s_i}}$ auf der rechten Seite finden.
+	\item Wir multiplizieren beide Seiten von Gleichung (\ref{eq:ansatz}) mit dem normierten Nennerpolynom $Q/b$ und erhalten:
+	      \[
+		      \frac{Q(z)}{b} (R(z) - \tilde{P}(z)) = \sum_{i=1}^{m} \sum_{j=1}^{s_i} \frac{c_{i, j} Q(z)/b}{(z - z_i)^j} = \sum_{i=1}^{m} \sum_{j=1}^{s_i} c_{i, j} \frac{(z - z_1)^{s_1} \cdots (z - z_m)^{s_m}}{(z - z_i)^j}.
+	      \]
+	      Auf der rechten Seite kürzen sich sodann in jedem Summanden die Terme der Form $(z - z_i)^j$ in Zähler und Nenner, sodass auf beiden Seiten nun Polynome stehen:
+	      \begin{equation}\label{eq:ansatz_expanded}
+		      \frac{Q(z)}{b} (R(z) - \tilde{P}(z)) = \sum_{i=1}^{m} \sum_{j=1}^{s_i} \frac{c_{i, j} Q(z)/b}{(z - z_i)^j} = \sum_{i=1}^{m} \sum_{j=1}^{s_i} c_{i, j} (z - z_1)^{s_1} \cdots (z - z_i)^{s_i - j} \cdots (z - z_m)^{s_m}.
+	      \end{equation}
+	\item Für den letzten Schritt hat man verschiedene Möglichkeiten, die $c_{i, j}$ mithilfe von Gleichung (\ref{eq:ansatz_expanded}) zu erhalten:
+	      \begin{itemize}
+		      \item Ein Koeffizientenvergleich, d.h. man multipliziert auf beiden Seiten aus und vergleicht die Faktoren der Terme $z^k$.
+		      \item Einsetzen bestimmter Werte, insbesondere von Nullstellen $z_{i_0}$, $i_0 = 1, \dots, m$.
+		            Denn für letztere Verschwinden alle Terme auf der rechten Seite außer der für $i = i_0$ und $j = 1$, sodass man direkt eine Gleichung mit nur einer Unbekannten erhält.
+	      \end{itemize}
+	      Natürlich ist auch eine Kombination beider Herangehensweisen möglich.
+\end{enumerate}
+Alternativ kann man ab dem zweiten Punkt auch folgendermaßen vorgehen:
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item Der Einfachheit halber schreiben wir $f(z) = R(z) - \tilde{P}(z)$ und erhalten sodann aus (\ref{eq:ansatz}):
+	      \[
+		      f(z) = \sum_{i = 1}^{m} \left[ \frac{c_{i, 1}}{(z - z_i)^1} + \frac{c_{i, 2}}{(z - z_i)^2} + \dots + \frac{c_{i, s_i}}{(z - z_i)^{s_i}} \right]
+	      \]
+	      Wir wählen nun eine Bestimmte der Nullstellen $z_i$, welche wir im Folgenden der Einfachheit halber mit $z_0$ bezeichnen.
+	      Wir schreiben auch $i_0$ für den zugehörigen Index, $c_{0, j}$ für die zugehörigen Konstanten $c_{i_0, j}$ und $n \in \mathbb{N}$ anstelle von $s_{i_0}$ für die Ordnung der Polstelle.
+	      Nun überlegen wir uns, was mit der Funktion
+	      \[
+		      (z - z_0)^{n} f(z) \qquad \text{für } z \to z_0
+	      \]
+	      passiert.
+	      Das wird ein wenig einfacher, wenn wir die Summe in $f$ wie folgt aufteilen:
+	      \[
+		      f(z) = \left[ \frac{c_{0, 1}}{(z - z_0)^1} + \frac{c_{0, 2}}{(z - z_0)^2} + \dots + \frac{c_{0, n}}{(z - z_0)^{n}} \right] + \underbrace{\sum_{i \neq i_0} \left[ \frac{c_{i, 1}}{(z - z_i)^1} + \frac{c_{i, 2}}{(z - z_i)^2} + \dots + \frac{c_{i, s_i}}{(z - z_i)^{s_i}} \right]}_{=: g(z)}.
+	      \]
+	      Denn dann gilt
+	      \begin{equation}\label{eq:primer_for_residue_theorem}
+		      (z - z_0)^{n} f(z) = c_{0, 1} (z - z_0)^{n - 1} + c_{0, 2} (z - z_0)^{n - 2} + \dots + c_{0, n} + (z - z_0)^{n} g(z).
+	      \end{equation}
+	      und alle Summanden in $g$ sind nahe bei $z_0$ beschränkt, da jeder von diesen konstanten Zähler und im Nenner nur einen Term der Form $(z - z_i)^k$ mit $z_i \neq z_0$ hat. Also gilt $(z - z_0)^{n} g(z) \to 0$ für $z \to z_0$.
+	      Für die verbleibenden Terme multiplizieren wir immer eine Konstante $c_{0, j}$ mit einer Potenz von $z - z_0$, das heißt auch all diese verschwinden für $z \to z_0$ \emph{außer} der Term für $j = n$, welcher der konstante Term $c_{0, n}$, also auch im Grenzwert $c_{0, n}$ ist.
+	      Insgesamt erhalten wir damit:
+	      \[
+		      \lim_{z \to z_0} (z - z_0)^{n} f(z) = c_{0, n}.
+	      \]
+	      Um dieses Verfahren zu vervollständigen, müssen wir uns noch eine Sache überlegen, nämlich was passiert, wenn wir die Funktion $(z - z_0)^{n} f(z)$ nach $z$ ableiten.
+	      Die ersten $n$ Terme in (\ref{eq:primer_for_residue_theorem}) sind mithilfe der Potenzregel sehr leicht zu differenzieren, beispielsweise ist
+	      \[
+		      \frac{\partial}{\partial z} c_{0, 1}(z - z_0)^{n - 1} = c_{0, 1} (n - 1) (z - z_0)^{n - 2},
+	      \]
+	      wohingegen der Term $c_{0, n}$ als Konstante einfach wegfällt.
+	      Für den letzten Term erhalten wir gemäß Produktregel
+	      \[
+		      n (z - z_0)^{n - 1} g(z) + (z - z_0)^{n} g'(z)
+	      \]
+	      als Ableitung.
+	      Insgesamt erhalten wir
+	      \begin{align*}
+		      \frac{\partial}{\partial z} (z - z_0)^{n} f(z) & = c_{0, 1} (n - 1) (z - z_0)^{n - 2} + c_{0, 2} (n - 2) (z - z_0)^{n - 3} + \dots + c_{0, n - 1} + 0 \\
+		                                                     & \phantom{=} + n (z - z_0)^{n - 1} g(z) + (z - z_0)^{n} g'(z).
+	      \end{align*}
+	      Die Summanden in der ersten Zeile konvergieren wieder bis auf den Vorletzten gegen $0$.
+	      Differenzieren wir in $g$ beispielsweise den Term $c_{i, 1}(z - z_i)^{-1}$, so erhalten wir $-c_{i, 1}(z - z_i)^{-2}$ und analog für alle anderen Terme.
+	      In den Nennern der Terme von $g$ kommt also noch immer nur $(z - z_i)^k$ für ein $k \in \mathbb{N}$ und $z_i \neq z_0$ vor und auch die Zähler bleiben konstant, das heißt auch $g'$ ist in einer Umgebung von $z_0$ beschränkt und in der zweiten Zeile konvergiert für $z \to z_0$ ebenfalls alles gegen $0$.
+	      Demnach erhalten wir:
+	      \[
+		      \lim_{z \to z_0} \frac{\partial}{\partial z} (z - z_0)^{n} f(z) = c_{0, n-1}.
+	      \]
+	      Man kann natürlich auch mehrfach ableiten und mit derselben Begründung wie für $g'$ ist auch $g''$ in einer Umgebung von $z_0$ beschränkt.
+	      Beispielsweise ergibt sich aus zweimaligem Differenzieren
+	      \[
+		      \left(\frac{\partial}{\partial z}\right)^2 (z - z_0)^{n} f(z) = c_{0, 1}(n - 1) (n - 2) (z - z_0)^{n - 3} + \cdots + 2 c_{0, 3} + \cdots,
+	      \]
+	      woraus
+	      \[
+		      \lim_{z \to z_0} \left(\frac{\partial}{\partial z}\right)^2 (z - z_0)^{n} f(z) = 2 c_{0, 3}
+	      \]
+	      folgt.
+	      Hier sehen wir erstmals die letzte Zutat, die uns für eine allgemeine Formel fehlt, bemerkbar in der $2$ vor $c_{0, 3}$.
+	      Denn nachdem wir ja immer Terme der Form $c_{0, j} (z - z_0)^{n - j}$ solange ableiten, bis sie das erste Mal konstant werden, \glqq fallen\grqq{} jedes Mal die Exponenten $n - j$, $(n - j) - 1$, $(n - j) - 2$ bis hin zu $1$ nach vorne.
+	      Da wir all diese miteinander multiplizieren, steht also vor $c_{0, j}$ dann $(n - j)!$.
+	      Mit all diesen Überlegungen erhalten wir die folgende Formel, welche für jede Nullstelle von $Q$ verwendet werden kann:
+	      \[
+		      \boxed{
+			      c_{0, j} = \lim_{z \to z_0} \frac{1}{(n - j)!} \left(\frac{\partial}{\partial z}\right)^{n - j} \big( (z - z_0)^{n} f(z) \big).
+		      }
+	      \]
+	      Wenn man ein klein wenig zur Vorlesung gespoilert werden möchte, so kann man bemerken, dass $n$ die Ordnung der Polstelle $z_0$ von $R$ ist und daraufhin die obige Formel mit Lemma 3.3 aus dem Vorlesungsskript vergleichen.
+	      Der Grund, weshalb uns vor allem die Koeffizienten für $j = 1$ interessieren, ergibt sich aus der obigen Berechnung im Abschnitt \glqq Motivation\grqq{}, bei welcher wir gesehen haben, dass nur diese einen Einfluss auf das Kurvenintegral haben.
+	      Zudem können wir ja all die Terme in $g$ mithilfe der geometrischen Reihe als Potenzreihen schreiben (vgl. Beispiel unten), sodass wir $f(z) = \sum_{k = -n}^{\infty} \frac{a_k}{(z - z_0)^k}$ erhalten (ein kleiner Ausblick auf sogenannte Laurent-Reihen), wobei $a_k = c_{0, -k}$ für $k \le -1$ gilt.
+	      Relevant ist also in dieser Darstellung nur $a_{-1}$ für das Kurvenintegral.
+	      Genau dieser Koeffizient $a_{-1} = c_{0, 1}$ ist das sogenannte \emph{Residuum}, welches wir in den nächsten Vorlesungen noch ausführlicher kennenlernen werden.
+\end{enumerate}
+\section{Beispiele}
+In der obigen Form wirkt das Verfahren vielleicht etwas abstrakt, daher gehen wir nun drei Beispiele durch, welche hoffentlich zeigen, dass Partialbruchzerlegung letztendlich ein relativ simpler Algorithmus ist, bei dem man sich nur nicht verrechnen darf.
+\begin{example}
+	Um die Partialbruchzerlegung von $\frac{3 z + 5}{(2 - z)^2}$ zu bestimmen, können wir den ersten Schritt überspringen, da das Zählerpolynom kleineren Grad als das Nennerpolynom hat.
+	Wir gehen also direkt zu Schritt 2 über und starten mit dem Ansatz
+	\[
+		\frac{3 z + 5}{(2 - z)^2} = \frac{c_1}{2 - z} + \frac{c_2}{(2 - z)^2}.
+	\]
+	Multiplizieren wir auf beiden Seiten mit dem Nennerpolynom $(2 - z)^2$, so folgt
+	\[
+		3 z + 5 = c_1 (2 - z) + c_2 \qquad \iff \qquad 3 z + 5 = -c_1 z + (2 c_1 + c_2).
+	\]
+	Vergleich des Koeffizienten des linearen Terms $z$ liefert $c_1 = -3$ und Vergleich des konstanten Terms (äquivalent: Einsetzen von $0$) ergibt dann $5 = 2c_1 + c_2$, also $c_2 = 11$.
+	Insgesamt erhalten wir:
+	\[
+		\frac{3 z + 5}{(2 - z)^2} = \frac{-3}{2 - z} + \frac{11}{(2 - z)^2}.
+	\]
+\end{example}
+\begin{example}
+	Betrachte die rationale Funktion
+	\[
+		R(z) = \frac{z^6-10z+4}{z^5 - 3 z^3 - 4 z}
+	\]
+	(vgl. das Beispiel aus dem Abschnitt \glqq Motivation\grqq{}).
+	Da der Zählergrad größer ist als der Nennergrad, verwenden wir an erster Stelle Polynomdivision:
+	\begin{center}
+		\polylongdiv[vars=z,style=C]{z^6-10z+4}{z^5 - 3 z^3 - 4 z}
+	\end{center}
+	Um den Ansatz aus Schritt 2 zu verwenden, müssen wir die Nullstellen des Polynoms $Q(z) = z^5 - 3 z^3 - 4 z$ finden.
+	Die einfache Nullstelle $z_1 = 0$ ist aufgrund der Faktorisierung $Q(z) = z (z^4 - 3z^2 - 4)$ offensichtlich und für die Übrigen verwenden wir die quadratische Lösungsformel gemeinsam mit Substitution von $\tilde{z} = z^2$:
+	\[
+		\tilde{z}^2 - 3 \tilde{z} - 4 = 0 \qquad \iff \qquad \tilde{z} = \frac{3 \pm \sqrt{9 + 16}}{2} = \frac{3 \pm 5}{2} \qquad \iff \qquad \tilde{z} = 4 \text{ oder } \tilde{z} = -1.
+	\]
+	Damit erhalten wir zusätzlich zur einfachen Nullstelle $z_1 = 0$ die vier einfachen Nullstellen $z_2 = -2$, $z_3 = 2$, $z_4 = - \iu$ und $z_5 = \iu$.
+	Unser Ansatz lautet also:
+	\[
+		\frac{z^6 - 10 z + 4}{z^5 - 3z^2 - 4z} - z = \frac{c_{1,1}}{z - z_1} + \frac{c_{2,1}}{z - z_2} + \frac{c_{3,1}}{z - z_3} + \frac{c_{4,1}}{z - z_4} + \frac{c_{5,1}}{z - z_5}.
+	\]
+	Zur besseren Lesbarkeit lassen wir den zweiten Index der Konstanten $c_{i, j}$ im Folgenden weg und schreiben beispielsweise $c_{1}$ für $c_{1, 1}$.
+	Damit haben wir nach Multiplikation beider Seiten mit $Q$ (was in diesem Fall bereits ein normiertes Polynom ist):
+	\[
+		\underbrace{z^6 - 10 z + 4 - z (z^5 - 3z^3 - 4z)}_{=3 z^4 + 4z^2 - 10 z + 4 =: f(z)} = c_1 \frac{Q(z)}{z - 0} + c_2 \frac{Q(z)}{z + 2} + c_3 \frac{Q(z)}{z - 2} + c_4 \frac{Q(z)}{z + \iu} + c_5 \frac{Q(z)}{z - \iu}.
+	\]
+	An dieser Stelle könnte man versucht sein, auf der rechten Seite immer das Polynom $Q$ einzusetzen, auf beiden Seiten auszumultiplizieren und dann das aus einem Koeffizientenvergleich resultierende Gleichungssystem zu lösen, allerdings ist hier die zweite oben genannte Option, Nullstellen von $Q$ einzusetzen, vermutlich deutlich schneller.
+
+	Denn beispielsweise verschwindet für $z_1 = 0$ jeder Term auf der rechten Seite außer dem ersten, da wir für keinen anderen diese Nullstelle von $Q$ rausteilen.
+	Damit erhalten wir:
+	\begin{itemize}
+		\item $z_1 = 0$: $f(0) = 4$, \qquad $\lim_{z \to 0} Q(z)/(z - 0) = (0 + 2)(0 - 2)(0 + \iu)(0 - \iu) = -4$.\\
+		      Der Grenzwert ist hier nötig, weil wir eigentlich nicht direkt $z = 0$ einsetzen können, da wir dann ja durch Null teilen würden.
+		      Alternativ kann man auch einfach zuerst den Faktor $z - 0$ aus $Q$ rausteilen und beispielsweise $Q_1(z) = (z + 2)(z - 2)(z + \iu)(z - \iu)$ schreiben, wo man direkt einsetzen kann.
+		      Das werden wir für die anderen Nullstellen machen.
+
+		      Es folgt $4 = c_1 \cdot (-4)$, also $c_1 = -1.$
+		\item $z_2 = -2$: $f(-2) = 3 \cdot (-2)^4 + 4 \cdot (-2)^2 - 10 \cdot (-2) + 4 = 88$, \qquad $Q_2(-2) = (-2 - 0)(-2 - 2)(-2 + \iu)(-2 - \iu) = 40$.\\
+		      Es folgt $88 = c_2 \cdot 40$, also $c_2 = \frac{11}{5}.$
+		\item $z_3 = 2$: $f(2) = 3 \cdot 2^4 + 4 \cdot 2^2 - 10 \cdot 2 + 4 = 48$, \qquad $Q_3(2) = (2 - 0)(2 + 2)(2 + \iu)(2 - \iu) = 40$.\\
+		      Es folgt $48 = c_3 \cdot 40$, also $c_3 = \frac{6}{5}.$
+		\item $z_4 = -\iu$: $f(-\iu) = 3 \cdot (-\iu)^4 + 4 \cdot (-\iu)^2 - 10 \cdot (-\iu) + 4 = 3 + 10 \iu$, \qquad $Q_4(-\iu) = (-\iu - 0)(-\iu + 2)(-\iu - 2)(-\iu - \iu) = 10$.\\
+		      Es folgt $3 + 10\iu = c_4 \cdot 10$, also $c_4 = \frac{3}{10} + \iu.$
+		\item $z_5 = \iu$: $f(\iu) = 3 \cdot \iu^4 + 4 \cdot \iu^2 - 10 \cdot \iu + 4 = 3 + 10 \iu$, \qquad $Q_5(\iu) = (\iu - 0)(\iu + 2)(\iu - 2)(\iu + \iu) = 10$.\\
+		      Es folgt $3 - 10\iu = c_5 \cdot 10$, also $c_5 = \frac{3}{10} - \iu.$
+	\end{itemize}
+	Zusammenfassend haben wir:
+	\[
+		c_1 = -1, \quad c_2 = \frac{11}{5}, \quad c_3 = \frac{6}{5}, \quad c_4 = \frac{3}{10} + \iu, \quad c_5 = \frac{3}{10} - \iu.
+	\]
+	% \begin{center}
+	% 	\begin{tabular}{l|c|r}
+	% 		Wert für $z$ & Resultierende Gleichung                                                                                            & Ergebnis                   \\
+	% 		\hline
+	% 		$z = 0$      & $4 = c_1 \cdot (0 + 2)(0 - 2)(0 + \iu)(0 - \iu)$                                                                   &                            \\
+	% 		             & $4 = c_1 \cdot (-4)$                                                                                               & $c_1 = -1$                 \\
+	% 		\hline
+	% 		$z = -2$     & $3 \cdot (-2)^4 + 4 \cdot (-2)^2 - 10 \cdot (-2) + 4 = c_2 \cdot (-2 - 0)(-2 - 2)(-2 + \iu)(-2 - \iu)$                                          \\
+	% 		             & $88 = c_2 \cdot 40$                                                                                                & $c_2 = \frac{11}{5}$       \\
+	% 		\hline
+	% 		$z = 2$      & $3 \cdot 2^4 + 4 \cdot 2^2 - 10 \cdot 2 + 4 = c_3 \cdot (2 - 0)(2 + 2)(2 + \iu)(2 - \iu)$                          &                            \\
+	% 		             & $48 = c_3 \cdot 40 $                                                                                               & $c_3 = \frac{6}{5}$        \\
+	% 		\hline
+	% 		$z = -\iu$   & $3 \cdot (-\iu)^4 + 4 \cdot (-\iu)^2 - 10 \cdot (-\iu) + 4 = c_4 \cdot (-\iu - 0)(-\iu + 2)(-\iu - 2)(-\iu - \iu)$ &                            \\
+	% 		             & $3 + 10 \iu = c_4 \cdot 10$                                                                                        & $c_4 = \frac{3}{10} + \iu$ \\
+	% 		\hline
+	% 		$z = \iu$    & $3 \cdot \iu^4 + 4 \cdot \iu^2 - 10 \cdot \iu + 4 = c_5 \cdot (\iu - 0)(\iu + 2)(\iu - 2)(\iu + \iu)$              &                            \\
+	% 		             & $3 - 10 \iu = c_5 \cdot 10$                                                                                        & $c_5 = \frac{3}{10} - \iu$ \\
+	% 	\end{tabular}
+	% \end{center}
+	Hierzu zwei Bemerkungen:
+	\begin{enumerate}
+		% TODO: Stimmt das?
+		\item Die letzte Rechnung hätte man sich eigentlich sparen können, da alle Koeffizienten reell sind, also $\overline{c_5} = c_4$ gelten muss.
+		\item Das war rechenlastiger als ursprünglich geplant... \faGrinBeamSweat[regular]
+	\end{enumerate}
+	Insgesamt erhalten wir aber (beachte, dass $\tilde{P}(z) = z$ nicht vergessen werden darf):
+	\[
+		R(z) = \frac{z^6-10z+4}{z^5 - 3 z^3 - 4 z} = z - \frac{1}{z} + \frac{11}{5z + 10} + \frac{6}{5z - 10} + \frac{\frac{3}{10} + \iu}{z + \iu} + \frac{\frac{3}{10} - \iu}{z - \iu}.
+	\]
+	Damit kann auch die obige Frage nach dem Integral $\int_{C_{1/2}(0)} \frac{z^6-10z+4}{z^5 - 3 z^3 - 4 z} \,\mathrm{d}z$ beantwortet werden.
+	Es liegt nämlich nur die Polstelle $z_1 = 0$ in $B_{1/2}(0)$, sodass wir
+	\[
+		\int_{C_{1/2}(0)} R(z) \,\mathrm{d}z = 0 - \int_{C_{1/2}(0)} z^{-1} \,\mathrm{d}z + 0 + 0 + 0 + 0 = -2 \pi \mathrm{i}
+	\]
+	erhalten.
+\end{example}
+\begin{example}
+	Als letztes Beispiel zeigen wir, wie Partialbruchzerlegung verwendet werden kann, um die Potenzreihendarstellung von $f(z) = \frac{1}{(z - \iu)(z + \iu)^2}$ um den Entwicklungspunkt $0$ zu berechnen.
+	Wie man vielleicht erwarten würde, starten wir mit einer Partialbruchzerlegung, welche gemäß unseres Ansatzes mit
+	\[
+		f(z) = \frac{c_1}{z - \iu} + \frac{c_2}{z + \iu} + \frac{c_3}{(z + \iu)^2}
+	\]
+	beginnt (man kann die Konstanten natürlich auch beliebig anders nennen, wichtig ist nur, dass man immer die richtigen Terme für den Ansatz hat, also pro Polstelle der Ordnung $n$ genau $n$ Terme).
+	Wieder können wir mit dem Nenner von $f$ durchmultiplizieren, um
+	\[
+		1 = c_1 (z + \iu)^2 + c_2 (z - \iu)(z + \iu) + c_3 (z - \iu)
+	\]
+	zu erhalten.
+	Einsetzen von $z = -\iu$ liefert $1 = -2 \iu c_3$, also $c_3 = \frac{1}{2}\iu$ und einsetzen von $z = \iu$ liefert $1 = c_1 4 \iu^2$, also $c_1 = -\frac{1}{4}$.
+	Zuletzt liefert Koeffizientenvergleich von $z^2$, dass $0 = c_1 + c_2$, also $c_2 = - c_1 = \frac{1}{4}$.
+	Es gilt also
+	\[
+		\frac{1}{(z - \iu)(z + \iu)^2} = -\frac{1}{4(z - \iu)} + \frac{1}{4(z + \iu)} + \frac{\iu}{2 (z + \iu)^2}.
+	\]
+	Die beiden ersten Terme können wir recht schnell mithilfe der geometrischen Reihe erweitern:
+	\[
+		-\frac{1}{4(z - \iu)} = \frac{1}{4\iu} \frac{1}{1 - z/\iu} = \frac{1}{4\iu} \sum_{n = 0}^{\infty} \left(\frac{z}{i}\right)^n = \frac{1}{4\iu} \sum_{n = 0}^{\infty} \left(- \iu z \right)^n \qquad \text{und} \qquad \frac{1}{4(z + \iu)} = \frac{1}{4\iu} \frac{1}{1 - \iu z} = \frac{1}{4 \iu} \sum_{n = 0}^{\infty} (\iu z)^n,
+	\]
+	wobei wir für die erste Reihe implizit angenommen haben, dass $\lvert \frac{z}{\iu} \rvert < 1$ und für die zweite, dass $\lvert \iu z \rvert < 1$, was Beides äquivalent zu $\lvert z \rvert < 1$ ist.
+	Der Trick war beide Male, den Nenner zu $1 - az$ für ein $a \in \mathbb{C}$ umzuformen.
+	Für den letzten Term bemerken wir, dass wir den Exponenten $2$ durch Ableiten erhalten sowie Potenzreihen termweise differenzieren können und gehen danach analog zu den beiden vorherigen Entwicklungen vor:
+	\[
+		\frac{\iu}{2(z + \iu)^2} = \frac{\iu}{2} \frac{\partial}{\partial z} \left( - \frac{1}{z + \iu} \right) = \frac{\iu}{2} \frac{\partial}{\partial z} \left( \frac{\iu}{1 - \iu z}\right) = \frac{i^2}{2} \frac{\partial}{\partial z} \left( \sum_{n = 0}^{\infty} (\iu z)^n \right) = -\frac{1}{2} \sum_{n = 1}^{\infty} n \iu (\iu z)^{n - 1} = - \frac{\iu}{2} \sum_{n = 0}^{\infty} (n + 1) (\iu z)^n.
+	\]
+	Auch hier war die implizite Annahme im dritten Schritt, dass $\lvert \iu z \rvert < 1 \iff \lvert z \rvert < 1$.
+	Setzen wir all dies zusammen, so erhalten wir, dass für $\lvert z \rvert < 1$ mit der Abrundungsfunktion $\lfloor \cdot \rfloor$ gilt:
+	\[
+		f(z) = \sum_{n = 0}^{\infty} \left( \frac{(-\iu)^n}{4\iu} + \frac{\iu^n}{4 \iu} - \frac{(n + 1) \iu^{n+1}}{2} \right) z^n = \sum_{n = 0}^{\infty} \left\lfloor \frac{n}{2} + 1 \right\rfloor \iu^{n-1} z^n.
+	\]
+\end{example}
+\end{document}
