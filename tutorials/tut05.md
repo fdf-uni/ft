@@ -11,7 +11,7 @@ Für den zweiten Punkt, also die Berechnung von Potenzreihendarstellungen, kenne
 ## Kurzprotokoll
 Nachdem es keinen Foliensatz gab, haben wir hauptsächlich nur die Aufgaben besprochen.
 
-Wir haben aber auch kurz über Proposition 2.24 geredet ("konvergiert eine Folge holomorpher Funktionen gleichmäßig auf Kompakta, so ist auch der Grenzwert holomorph") und hierbei Beispiele von Funktionen auf $$\mathbb{R}$$ betrachtet, für welche die Aussage falsch ist -- man sieht also auch hier wieder, dass Holomorphie deutlich restriktiver ist als reelle Differenzierbarkeit.
+Wir haben aber auch (zumindest im ersten Montags-Tutorium) kurz über Proposition 2.24 geredet ("konvergiert eine Folge holomorpher Funktionen gleichmäßig auf Kompakta, so ist auch der Grenzwert holomorph") und hierbei Beispiele von Funktionen auf $$\mathbb{R}$$ betrachtet, für welche die Aussage falsch ist -- man sieht also auch hier wieder, dass Holomorphie deutlich restriktiver ist als reelle Differenzierbarkeit.
 Die Beispiele waren (geordnet danach, wie "ad hoc" sie sind):
 1. Die Funktionenfolge $$f_n(x) = \sqrt{x^2 + \frac{1}{n^2}}$$, welche gleichmäßig gegen $$\lvert x \rvert$$ konvergiert, s. [hier](https://www.geogebra.org/m/duunhfme) für ein Geogebra-Applet. ($$\frac{1}{n^2}$$ kann natürlich durch jede beliebige andere positive Nullfolge ersetzt werden.)
 2. Die [Weierstraß-Funktion](https://de.wikipedia.org/wiki/Weierstra%C3%9F-Funktion), die sogar nirgends differenzierbar ist (s. auch [hier](https://www.geogebra.org/m/zfvd97sp)).
