@@ -20,7 +20,7 @@ Die Beispiele waren (geordnet danach, wie "ad hoc" sie sind):
   Natürlich sind aber die meisten stetigen Funktionen nicht differenzierbar (mit geeigneter Interpretation von "die meisten" sogar nirgends differenzierbar, s. beispielsweise [hier](https://de.wikipedia.org/wiki/Weierstra%C3%9F-Funktion#Dichtheit_nirgends_differenzierbarer_Funktionen)).
 
 Wir bemerken an dieser Stelle, dass in jedem der drei obigen Beispiele jedes Folgenglied sogar beliebig oft differenzierbar ist!
-Die Aussage ist für reellwertige Funktionen also auch durch Voraussetzen höherer Regularität nicht wahr.
+Die Aussage ist für reellwertige Funktionen also auch durch Voraussetzen höherer Regularität nicht wahr (allerdings stimmt sie, wenn man gleichmäßige Konvergenz der Ableitungen voraussetzt; hierzu findet man recht schnell Ergebnisse unter dem Stichwort "uniform convergence of derivatives").
 
 Man kann sich auch überlegen, was jeweils in den drei Beispielen schief geht, wenn man versucht, sie ins Komplexe zu übertragen:
 1. Man kann versuchen die Wurzelfunktion auf $$\mathbb{C}$$ zu erweitern, beispielsweise mittels Polarkoordinaten zu $$\sqrt{r \mathrm{e}^{\mathrm{i} \varphi}} = \sqrt{r} \mathrm{e}^{\mathrm{i} \varphi/2}$$ (was natürlich nur eine mögliche Wahl ist).
