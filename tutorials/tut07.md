@@ -38,7 +38,7 @@ Zwei mögliche Herangehensweisen wären hierbei:
 
 
 ## Fun Facts
-Hinsichtlich isolierter Singularitäten wären zwei mögliche Fun Facts die Nicht-Existenz einer ganzen Wurzelfunktion mithilfe des Riemannschen Hebbarkeitssatzes (s. beispielsweise [hier](https://de.wikipedia.org/wiki/Riemannscher_Hebbarkeitssatz#Nichtexistenz_einer_holomorphen_Wurzelfunktion)) oder natürlich der [große Satz von Picard](https://de.wikipedia.org/wiki/Satz_von_Picard), welcher eine starke Verallgemeinerung des Satzes von Casorati-Weierstraß darstellt: das Bild der Umgebung einer wesentlichen Singularität liegt nicht nur dicht in $$\mathbb{C}$$, sondern beinhaltet sogar bis auf höchstens eine Ausnahme jede komplexe Zahl unendlich oft.
+Hinsichtlich isolierter Singularitäten wären zwei mögliche Fun Facts die Nicht-Existenz einer ganzen Wurzelfunktion mithilfe des Riemannschen Hebbarkeitssatzes (s. beispielsweise [hier](https://de.wikipedia.org/wiki/Riemannscher_Hebbarkeitssatz#Nichtexistenz_einer_holomorphen_Wurzelfunktion)) oder natürlich der [große Satz von Picard](https://de.wikipedia.org/wiki/Satz_von_Picard), welcher eine starke Verallgemeinerung des Satzes von Casorati-Weierstraß darstellt: das Bild einer Umgebung einer wesentlichen Singularität liegt nicht nur dicht in $$\mathbb{C}$$, sondern beinhaltet sogar bis auf höchstens eine Ausnahme jede komplexe Zahl unendlich oft.
 
 Es gab allerdings noch eine weitere Aufgabe auf dem Übungsblatt, welche sich gut für einen Fun Fact eignet, nämlich Aufgabe 5.
 
