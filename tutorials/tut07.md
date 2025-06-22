@@ -29,12 +29,12 @@ Zwei mögliche Herangehensweisen wären hierbei:
 2. Zählen von Null- und Polstellen des Zählers und Nenners (z. B. "$$f$$ hat Nullstelle der Ordnung $$1$$ bei $$z_0$$, $$g$$ hingegen der Ordnung $$3$$, also hat $$\frac{f}{g}$$ eine Polstelle der Ordnung $$3 - 1 = 2$$"). Das deckt eigentlich alle drei anderen Teilaufgaben ab.
 
 ### Aufgabe 3
-- Hat $$f$$ eine Polstelle der Ordnung $$n$$, bei $$z_0$$, so hat $$f'$$ eine Polstelle der Ordnung $$n + 1$$ bei $$z_0$$ (Beweis beispielsweise mittels Laurententwicklung oder der anderen Darstellung aus Lemma 3.2).
+- Hat $$f$$ eine Polstelle der Ordnung $$n$$ bei $$z_0$$, so hat $$f'$$ eine Polstelle der Ordnung $$n + 1$$ bei $$z_0$$ (Beweis beispielsweise mittels Laurententwicklung oder der anderen Darstellung aus Lemma 3.2).
     Eine analoge Aussage gilt natürlich auch für Nullstellen.
 - Möchte man eine Aussage über eine unspezifizierte isolierte Singularität beweisen, bietet sich eine Fallunterscheidung in die drei Fälle "hebbare Singularität", "Polstelle" und "wesentliche Singularität" sehr gut an.
 
 ### Aufgabe 4
-- Wiederholung der relevanten Begriffe und des Riemannschen Hebbarkeitssatzes.
+- Wiederholung der für die Aufgabe relevanten Begriffe und des Riemannschen Hebbarkeitssatzes.
 
 
 ## Fun Facts
