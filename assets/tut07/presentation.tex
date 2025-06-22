@@ -1,0 +1,80 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 7}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{16. \& 17. Juni 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Der Vollständigkeit halber: Residuensatz}
+	\pause
+	\begin{theorem}
+		Ist $f$ in einer offenen Menge $\Omega$, welche einen (positiv orientierten) Kreis $C$ (oder allgemeiner eine toy contour $C$) enthält, holomorph bis auf Polstellen\footnote{Die Definition dieser kommt später.} $z_1, \dots, z_N$ innerhalb von $C$, so gilt
+		\[
+			\int_{C} f(z) \,\mathrm{d}z = 2 \pi \iu \sum_{k=1}^{N} \operatorname{res}_{z_k} f.
+		\]
+	\end{theorem}
+	\pause
+	Hierbei bezeichnet $\operatorname{res}_{z_k} f$ das \emph{Residuum} von $f$ bei $z_k$, welches, falls $z_k$ eine Polstelle der Ordnung $n$ ist, wie folgt berechnet werden kann:\vspace*{-0.15cm}
+	\[
+		\operatorname{res}_{z_k} f = \lim_{z \to z_k} \frac{1}{(n-1)!} \left( \frac{\partial}{\partial z} \right)^{n-1} ((z - z_k)^n f(z)).
+	\]\vspace*{-0.15cm}
+	\pause
+	Definiert ist dieses als Koeffizient $a_{-1}$ in der Entwicklung
+	\[
+		f(z) = a_{-n} (z - z_k)^{-n} + \dots + a_{-1} (z - z_k)^{-1} + G(z)
+	\]
+	mit $G$ holomorph in einer Umgebung von $z_k$ (für die Existenz einer solchen Entwicklung, s. Lemma 3.2).
+\end{frame}
+\begin{frame}
+	\frametitle{Nullstellen holomorpher Funktionen}
+	Seien $\Omega \subset \mathbb{C}$ offen, $f \colon \Omega \to \mathbb{C}$ holomorph mit $\not\equiv 0$ und $z_0 \in \Omega$ eine Nullstelle von $f$, d.h. $f(z_0) = 0$.
+	Dann existieren eine offene Umgebung $U \subset \Omega$ von $z_0$, eine holomorphe Funktion $g \colon U \to \mathbb{C}$ mit $g(z_0) \neq 0$ und ein eindeutiges $n \in \mathbb{N}$, sodass
+	\[
+		f(z) = (z - z_0)^n g(z) \qquad \forall z \in U.
+	\]
+	$n$ heißt \emph{Ordnung} (auch \emph{Vielfachheit}) der Nullstelle $z_0$.
+\end{frame}
+\begin{frame}
+	\frametitle{Isolierte Singularitäten holomorpher Funktionen}
+	Seien $\Omega \subset \mathbb{C}$ offen, $z_0 \in \Omega$ und $f \colon \Omega \setminus \{z_0\} \to \mathbb{C}$ holomorph.
+	\pause
+	\begin{itemize}
+		\item Existiert $w \in \mathbb{C}$, sodass $\tilde{f}(z) = \begin{cases} f(z) & \text{falls } z \neq z_0, \\ w & \text{falls } z = z_0 \end{cases}$ holomorph in $\Omega$ ist, d.h. existiert eine holomorphe Fortsetzung von $f$, so heißt $z_0$ \emph{hebbare Singularität}.
+		      \pause
+		\item Verschwindet $f$ in einer Umgebung von $z_0$ nicht und ist die Funktion $\frac{1}{f}$, wenn sie durch Null bei $z_0$ fortgesetzt wird, holomorph, so heißt $z_0$ \emph{Polstelle} von $f$.
+		      Die \emph{Ordnung} (auch \emph{Vielfachheit}) der Polstelle ist die Ordnung der Nullstelle der derart fortgesetzten Funktion $\frac{1}{f}$.
+		      \pause
+		\item Ist $z_0$ weder eine hebbare Singularität, noch eine Polstelle, so heißt $z_0$ \emph{wesentliche Singularität} von $f$.
+	\end{itemize}
+	\pause
+	Ist $(z_n)_{n \in \mathbb{N}} \subset \Omega$ eine Folge ohne Häufungspunkt in $\Omega$ und $g \colon \Omega \setminus \{z_n : n \in \mathbb{N}\} \to \mathbb{C}$ holomorph mit Polstellen bei den $z_n$, so heißt $g$ \emph{meromorph}.
+\end{frame}
+\begin{frame}
+	\frametitle{Sätze zu/Kriterien für isolierten Singularitäten}
+	Im Folgenden seien $\Omega$, $z_0$ und $f$ wie auf der vorherigen Folie.
+	\pause
+	\begin{theorem}[Riemannscher Hebbarkeitssatz]
+		Ist $f$ beschränkt (in einer Umgebung von $z_0$), so ist $z_0$ eine hebbare Singularität.
+	\end{theorem}
+	\pause
+	Hingegen ist $z_0$ \emph{genau dann} eine Polstelle von $f$, wenn $\lvert f(z) \rvert \to \infty$ für $z \to z_0$ gilt.
+	\pause
+	\begin{theorem}[Casorati-Weierstraß]
+		Ist $f \colon D_r(z_0) \setminus \{z_0\} \to \mathbb{C}$ holomorph und $z_0$ eine wesentliche Singularität, so ist $f(D_r(z_0) \setminus \{z_0\})$ dicht in $\mathbb{C}$.
+	\end{theorem}
+\end{frame}
+\end{document}
