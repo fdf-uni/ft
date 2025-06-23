@@ -18,13 +18,13 @@ Zuletzt haben wir auch noch ganz kurz [diese Abbildung von Wikipedia](https://en
 
 ### Aufgabe 2
 "Grenzwert-Verfahren", um eine isolierte Singularität $$z_0$$ von $$f$$ zu klassifizieren:
-- Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ und ist endlich, so ist $$z_0$$ eine hebbare Singularität von $$f$$. (Man sollte sich hier überlegen, wie das aus dem Riemannschen Hebbarkeitssatz folgt. Die Ideen sind letztendlich die selben wie in Aufgabe 4.)
+- Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ und ist endlich, so ist $$z_0$$ eine hebbare Singularität von $$f$$. Es reicht auch, dass $$\lvert f(z) \rvert$$ nahe $$z_0$$ beschränkt ist, um die Existenz des Grenzwertes zu garantieren. (Man sollte sich hier überlegen, wie diese beiden Aussagen aus dem Riemannschen Hebbarkeitssatz folgen. Die Ideen sind letztendlich die selben wie in Aufgabe 4.)
 - Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ und ist gleich $$\infty$$, so besitzt $$f$$ bei $$z_0$$ eine Polstelle.
     Um die Ordnung zu bestimmen, kann man entweder das kleinste $$n \in \mathbb{N}$$ finden, sodass $$\lim_{z \to z_0} \lvert z - z_0 \rvert^n \lvert f(z) \rvert < \infty$$, welches dann die Ordnung der Polstelle ist oder äquivalent hierzu das kleinste $$n \in \mathbb{N}$$, für welches $$\lim_{z \to z_0} \frac{1}{(z - z_0)^n f(z)} \neq 0$$ gilt.
-- Existiert $$\lim_{z \to z_0}$$ _nicht_, so liegt eine wesentliche Singularität bei $$z_0$$ vor.
+- Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ _nicht_, so liegt eine wesentliche Singularität bei $$z_0$$ vor.
 
-Ähnlich wie man bei der Berechnung von Grenzwerten oft zuerst mit heuristischen Methoden eine Vermutung über den Wert des Grenzwertes stellen muss, um dann rigoros diese Vermutung zu beweisen, eignen sich bei Aufgaben wie dieser derartige Herangehensweisen, insbesondere um die Ordnung von Polstellen zu bestimmen.
-Zwei mögliche Herangehensweisen wären hierbei:
+Ähnlich wie man bei der Berechnung von Grenzwerten mit $\epsilon$-Kriterium oft zuerst mit heuristischen Methoden eine Vermutung über den Wert des Grenzwertes stellen muss, um dann rigoros diese Vermutung zu beweisen, eignen sich bei Aufgaben wie dieser derartige Herangehensweisen, insbesondere um die Ordnung von Polstellen zu bestimmen.
+Zwei mögliche solche Herangehensweisen wären hierbei:
 1. Persönlich finde ich Laurent-Reihen recht hilfreich, beispielsweise für Aufgabe (ii) mit $$z \mapsto \sin\left(\frac{1}{z}\right)$$. Allerdings habe ich den Eindruck, dass rigorose Beweise mit diesen gelegentlich etwas umständlich werden, wohingegen sie manchmal so gut wie sofort indizieren können, was für eine Singularität vorliegt.
 2. Zählen von Null- und Polstellen des Zählers und Nenners (z. B. "$$f$$ hat Nullstelle der Ordnung $$1$$ bei $$z_0$$, $$g$$ hingegen der Ordnung $$3$$, also hat $$\frac{f}{g}$$ eine Polstelle der Ordnung $$3 - 1 = 2$$"). Das deckt eigentlich alle drei anderen Teilaufgaben ab.
 
