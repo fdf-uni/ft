@@ -60,19 +60,19 @@ Insbesondere falls man Umlaufzahlen kennt, ist aber vielleicht diese Interpretat
 - Der Residuensatz gilt auch für wesentliche Singularitäten[^2], allerdings hat man hier nicht eine direkte Formel wie für die Residuen bei Polstellen (vgl. Lemma 3.3), sondern muss explizit die Laurent-Entwicklung berechnen, um die Residuen ermitteln zu können.
 
 [^2]: Da in den Tutorien nach einem Beweis gefragt wurde, hier eine mögliche Skizze eines solchen: Die wesentliche Beobachtung ist, dass eine Laurent-Reihe $$\sum_{n = -\infty}^{\infty} a_n (z - z_0)^n$$ auf einem offenen Kreisring $$\{z \in \mathbb{C} : r < \lvert z - z_0 \rvert < R\}$$ konvergiert.
-Um dies zu zeigen, kann man die Laurent-Reihe in den _Hauptteil_ $$\sum_{n = -\infty}^{-1} a_n (z - z_0)^n = \sum_{n = 1}^{\infty} a_{-n} \left(\frac{1}{z - z_0}\right)^n$$ und den _Nebenteil_ (auch _regulärer Teil_ genannt) $$\sum_{n = 0}^{\infty} a_n (z - z_0)^n$$ zerlegen.
-Gemäß Cauchy-Hadamard (oder mittels Vergleich mit einer geometrischen Reihe) konvergiert die erste Reihe für $$\left\lvert \frac{1}{z - z_0} \right\rvert < \frac{1}{r} \iff \lvert z - z_0 \rvert > r$$ und die zweite für $$\lvert z - z_0 \rvert < R$$, wobei
-\\[
-    r = \limsup_{n \to \infty} \sqrt[n]{\lvert a_{-n} \rvert} \qquad \text{und} \qquad R = \limsup_{n \to \infty} \srqt[n]{\lvert a_n \rvert}
-\\]
-mit den üblichen Konventionen falls $$r$$ oder $$R$$ einen der Werte $$\{0, \infty\}$$ annehmen.
-Mit demselben Argument wie für Potenzreihen zeigt man, dass die Konvergenz lokal gleichmäßig ist (oder verwendet ein geeignetes Konvergenzkriterium), um zu beweisen, dass bei der Berechnung von Kurvenintegralen Laurent-Reihen termweise integriert werden können.
-Sei nun $$f \colon \Omega \setminus \{z_0\} \to \mathbb{C}$$ holomorph mit einer isolierten (eventuell wesentlichen) Singularität bei $$z_0$$.
-Für klein genuges $$\epsilon > 0$$ konvergiert die Laurent-Entwicklung von $$f$$ auf der punktierten Kreisscheibe $$B_{\epsilon}(z_0) \setminus \{z_0\}$$ (das folgt aus der Tatsache, dass die Singularität isoliert ist) und es folgt
-\\[
-    \int_{C_{\epsilon}(z_0)} f(z) \,\mathrm{d}z = \sum_{n = -\infty}^{\infty} \int_{C_{\epsilon}(z_0)} a_n (z - z_0)^n \,\mathrm{d}z = 2 \pi \mathrm{i} a_{-1},
-\\]
-was mit dem üblichen "Korridor-Argument" den Residuensatz liefert.
+    Um dies zu zeigen, kann man die Laurent-Reihe in den _Hauptteil_ $$\sum_{n = -\infty}^{-1} a_n (z - z_0)^n = \sum_{n = 1}^{\infty} a_{-n} \left(\frac{1}{z - z_0}\right)^n$$ und den _Nebenteil_ (auch _regulärer Teil_ genannt) $$\sum_{n = 0}^{\infty} a_n (z - z_0)^n$$ zerlegen.
+    Gemäß Cauchy-Hadamard (oder mittels Vergleich mit einer geometrischen Reihe) konvergiert die erste Reihe für $$\left\lvert \frac{1}{z - z_0} \right\rvert < \frac{1}{r} \iff \lvert z - z_0 \rvert > r$$ und die zweite für $$\lvert z - z_0 \rvert < R$$, wobei
+    \\[
+        r = \limsup_{n \to \infty} \sqrt[n]{\lvert a_{-n} \rvert} \qquad \text{und} \qquad R = \limsup_{n \to \infty} \srqt[n]{\lvert a_n \rvert}
+    \\]
+    mit den üblichen Konventionen falls $$r$$ oder $$R$$ einen der Werte $$\{0, \infty\}$$ annehmen.
+    Mit demselben Argument wie für Potenzreihen zeigt man, dass die Konvergenz lokal gleichmäßig ist (oder verwendet ein geeignetes Konvergenzkriterium), um zu beweisen, dass bei der Berechnung von Kurvenintegralen Laurent-Reihen termweise integriert werden können.
+    Sei nun $$f \colon \Omega \setminus \{z_0\} \to \mathbb{C}$$ holomorph mit einer isolierten (eventuell wesentlichen) Singularität bei $$z_0$$.
+    Für klein genuges $$\epsilon > 0$$ konvergiert die Laurent-Entwicklung von $$f$$ auf der punktierten Kreisscheibe $$B_{\epsilon}(z_0) \setminus \{z_0\}$$ (das folgt aus der Tatsache, dass die Singularität isoliert ist) und es folgt
+    \\[
+        \int_{C_{\epsilon}(z_0)} f(z) \,\mathrm{d}z = \sum_{n = -\infty}^{\infty} \int_{C_{\epsilon}(z_0)} a_n (z - z_0)^n \,\mathrm{d}z = 2 \pi \mathrm{i} a_{-1},
+    \\]
+    was mit dem üblichen "Korridor-Argument" den Residuensatz liefert.
 
 ## Fun Facts
 
