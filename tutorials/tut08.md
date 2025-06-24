@@ -48,12 +48,12 @@ Insbesondere falls man Umlaufzahlen kennt, ist aber vielleicht diese Interpretat
 
 ### Aufgabe 1
 - Rechnen mit $$\operatorname{Log}$$ und komplexen Potenzen.
-- Vorsicht: Im Allgemeinen übertragen sich bekannte Rechenregeln für Potenzen nicht direkt aus dem Reellen ins Komplexe. Hier sollte man vielleicht auch etwas aufpassen und $$\mathrm{e}^z$$ _nicht_ als "$$\mathrm{e}$$ hoch $$z$$" lesen (auch wenn man das immer so sagt und natürlich auch die Schreibweise dazu veranlasst), sondern sich daran erinnern, dass $\mathrm{e}^z$ die über die Potenzreihe $$\sum_{k=0}^{\infty} \frac{z^k}{k!}$$ definierte komplexe Exponentialfunktion bezeichnet.
-    Hierdurch kann man auch Fehler wie $$\mathrm{e}^{z w} = (\mathrm{e}^z)^w$$ vermeiden, was ein Beispiel für eine Rechenregel ist, die sich nicht direkt für beliebige $z, w \in \mathbb{C}$ übertragen lässt.
-    Man betrachte beispielsweise $z = w = \mathrm{i} \pi$ in welchem Fall die rechte Seite der Gleichung mit unsere Definition über den Hauptzweig des Logarithmus nicht definiert ist -- aber selbst wenn die rechte Seite definiert ist, so hängt sie ja noch immer von der Wahl des Logarithmus ab und für eine andere Wahl können beide Seiten voneinander abweichen.
+- Vorsicht: Im Allgemeinen übertragen sich bekannte Rechenregeln für Potenzen nicht direkt aus dem Reellen ins Komplexe. Hier sollte man vielleicht auch etwas aufpassen und $$\mathrm{e}^z$$ _nicht_ als "$$\mathrm{e}$$ hoch $$z$$" lesen (auch wenn man das immer so sagt und natürlich auch die Schreibweise dazu veranlasst), sondern sich daran erinnern, dass $$\mathrm{e}^z$$ die über die Potenzreihe $$\sum_{k=0}^{\infty} \frac{z^k}{k!}$$ definierte komplexe Exponentialfunktion bezeichnet.
+    Hierdurch kann man auch Fehler wie $$\mathrm{e}^{z w} = (\mathrm{e}^z)^w$$ vermeiden, was ein Beispiel für eine Rechenregel ist, die sich nicht direkt für beliebige $$z, w \in \mathbb{C}$$ übertragen lässt.
+    Man betrachte beispielsweise $$z = w = \mathrm{i} \pi$$ in welchem Fall die rechte Seite der Gleichung mit unserer Definition über den Hauptzweig des Logarithmus nicht definiert ist -- aber selbst wenn die rechte Seite definiert ist, so hängt sie ja noch immer von der Wahl des Logarithmus ab und für eine andere Wahl können beide Seiten dementsprechend sogar voneinander abweichen.
 
 ### Aufgabe 3
-- Wiederholung der umgekehrten Dreiecksungleichung und Anwenden des Satzes von Rouché.
+- Eventuell "Wiederholung" der umgekehrten Dreiecksungleichung und Anwenden des Satzes von Rouché.
 - Für Letzteres ist der Trick oft, eine gegebene Gleichung zu einer Nullstellengleichung umzuformen.
 
 ### Aufgabe 5
@@ -63,12 +63,12 @@ Insbesondere falls man Umlaufzahlen kennt, ist aber vielleicht diese Interpretat
     Um dies zu zeigen, kann man die Laurent-Reihe in den _Hauptteil_ $$\sum_{n = -\infty}^{-1} a_n (z - z_0)^n = \sum_{n = 1}^{\infty} a_{-n} \left(\frac{1}{z - z_0}\right)^n$$ und den _Nebenteil_ (auch _regulärer Teil_ genannt) $$\sum_{n = 0}^{\infty} a_n (z - z_0)^n$$ zerlegen.
     Gemäß Cauchy-Hadamard (oder mittels Vergleich mit einer geometrischen Reihe) konvergiert die erste Reihe für $$\left\lvert \frac{1}{z - z_0} \right\rvert < \frac{1}{r} \iff \lvert z - z_0 \rvert > r$$ und die zweite für $$\lvert z - z_0 \rvert < R$$, wobei
     \\[
-        r = \limsup_{n \to \infty} \sqrt[n]{\lvert a_{-n} \rvert} \qquad \text{und} \qquad R = \limsup_{n \to \infty} \srqt[n]{\lvert a_n \rvert}
+        r = \limsup_{n \to \infty} \sqrt[n]{\lvert a_{-n} \rvert} \qquad \text{und} \qquad \frac{1}{R} = \limsup_{n \to \infty} \sqrt[n]{\lvert a_n \rvert}
     \\]
     mit den üblichen Konventionen falls $$r$$ oder $$R$$ einen der Werte $$\{0, \infty\}$$ annehmen.
     Mit demselben Argument wie für Potenzreihen zeigt man, dass die Konvergenz lokal gleichmäßig ist (oder verwendet ein geeignetes Konvergenzkriterium), um zu beweisen, dass bei der Berechnung von Kurvenintegralen Laurent-Reihen termweise integriert werden können.
     Sei nun $$f \colon \Omega \setminus \{z_0\} \to \mathbb{C}$$ holomorph mit einer isolierten (eventuell wesentlichen) Singularität bei $$z_0$$.
-    Für klein genuges $$\epsilon > 0$$ konvergiert die Laurent-Entwicklung von $$f$$ auf der punktierten Kreisscheibe $$B_{\epsilon}(z_0) \setminus \{z_0\}$$ (das folgt aus der Tatsache, dass die Singularität isoliert ist) und es folgt
+    Für klein genuges $$\epsilon > 0$$ konvergiert die Laurent-Entwicklung $$\sum_{n=-\infty}^{\infty} a_n (z - z_0)^n$$ von $$f$$ auf der punktierten Kreisscheibe $$B_{\epsilon}(z_0) \setminus \{z_0\}$$ (das folgt aus der Tatsache, dass die Singularität isoliert ist) und es folgt
     \\[
         \int_{C_{\epsilon}(z_0)} f(z) \,\mathrm{d}z = \sum_{n = -\infty}^{\infty} \int_{C_{\epsilon}(z_0)} a_n (z - z_0)^n \,\mathrm{d}z = 2 \pi \mathrm{i} a_{-1},
     \\]
