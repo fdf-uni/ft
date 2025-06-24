@@ -17,12 +17,14 @@ Zuletzt haben wir auch noch ganz kurz [diese Abbildung von Wikipedia](https://en
 ## Zum Mitnehmen
 
 ### Aufgabe 2
-"Grenzwert-Verfahren", um eine isolierte Singularität $$z_0$$ von $$f$$ zu klassifizieren:
+"Grenzwert-Verfahren", um eine isolierte Singularität $$z_0$$ von $$f$$ zu klassifizieren[^2]:
 - Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ und ist endlich, so ist $$z_0$$ eine hebbare Singularität von $$f$$. Es reicht auch, dass $$\lvert f(z) \rvert$$ nahe $$z_0$$ beschränkt ist, um die Existenz des Grenzwertes zu garantieren. (Man sollte sich hier überlegen, wie diese beiden Aussagen aus dem Riemannschen Hebbarkeitssatz folgen. Die Ideen sind letztendlich die selben wie in Aufgabe 4.)
 - Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ und ist gleich $$\infty$$, so besitzt $$f$$ bei $$z_0$$ eine Polstelle.
     Um die Ordnung zu bestimmen, kann man entweder das kleinste $$n \in \mathbb{N}$$ finden, sodass $$\lim_{z \to z_0} \lvert z - z_0 \rvert^n \lvert f(z) \rvert < \infty$$, welches dann die Ordnung der Polstelle ist oder äquivalent hierzu das kleinste $$n \in \mathbb{N}$$, für welches $$\lim_{z \to z_0} \frac{1}{(z - z_0)^n f(z)} \neq 0$$ gilt.
     Natürlich kann man hier auch auf etwas andere Arten argumentieren, beispielsweise indem man das einzige $$n$$ findet, welches $$0 \neq \lim_{z \to z_0} \lvert z - z_0 \rvert^n \lvert f(z) \rvert < \infty$$ erfüllt, was dann wiederum das kleinste $$n$$ ist, das letztere Ungleichung erfüllt.
 - Existiert $$\lim_{z \to z_0} \lvert f(z) \rvert$$ _nicht_, so liegt eine wesentliche Singularität bei $$z_0$$ vor.
+
+[^2]: Die Gültigkeit von diesem folgt je nach Fall (in dieser Reihenfolge) aus dem Riemannschen Hebbarkeitssatz, Lemma 3.2 aus der Vorlesung oder dem Satz von Casorati-Weierstraß.
 
 Ähnlich wie man bei der Berechnung von Grenzwerten mit $$\epsilon$$-Kriterium oft zuerst mit heuristischen Methoden eine Vermutung über den Wert des Grenzwertes stellen muss, um dann rigoros diese Vermutung zu beweisen, eignen sich bei Aufgaben wie dieser derartige Herangehensweisen, insbesondere um die Ordnung von Polstellen zu bestimmen.
 Zwei mögliche solche Herangehensweisen wären hierbei:
