@@ -1,0 +1,88 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 8}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{23. bis 25. Juni 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Das Argumentprinzip}
+	\begin{theorem}
+		Sei $f$ holomorph in einer Umbegung einer Kreisscheibe $\overline{D}$, bis auf endlich viele Pole.
+		Falls $f$ auf $C = \partial D$ weder Pole noch Nullstellen hat, so gilt
+		\[
+			\frac{1}{2 \pi \iu} \int_{C} \frac{f'(z)}{f(z)} \,\mathrm{d}z = \# N - \# P,
+		\]
+		wobei $\# N$ bzw. $\# P$ die Anzahl der Null- bzw. Polstellen von $f$ innerhalb von $C$ bezeichnet, jeweils mit Vielfachheit gezählt.
+	\end{theorem}
+	\pause
+	Merkhilfe $\frac{f'}{f}$ heißt \emph{logarithmische Ableitung}.\\
+	\pause
+	Warum Argumentprinzip? \pause $\leadsto$ s. Animation.
+\end{frame}
+\begin{frame}
+	\frametitle{Der Satz von Rouché}
+	\pause
+	\begin{theorem}
+		Seien $f$ und $g$ holomorph in Umgebung einer Kreisscheibe $\overline{D}$.
+		Gilt zusätzlich
+		\[
+			\lvert f(z) \rvert > \lvert g(z) \rvert \qquad \text{für alle } z \in \partial D,
+		\]
+		so besitzen $f$ und $f + g$ (mit Vielfachheit) gleich viele Nullstellen innerhalb von $D$.
+	\end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Offenheits- und Maximumprinzip}
+	\pause
+	\begin{theorem}[Satz von der offenen Abbildung]
+		Seien $\Omega \subset \mathbb{C}$ offen und zusammenhängend und $f \colon \Omega \to \mathbb{C}$ eine holomorphe, nicht-konstante Funktion.
+		Dann ist $f$ eine offene Abbildung, d.h. $f(U)$ ist offen für alle $U \subset \Omega$ offen.
+	\end{theorem}
+	\pause
+	\begin{theorem}[Maximumprinzip]
+		Seien $\Omega \subset \mathbb{C}$ offen und zusammenhängend und $f \colon \Omega \to \mathbb{C}$ eine holomorphe, nicht-konstante Funktion.
+		Dann nimmt $\lvert f \rvert$ auf $\Omega$ nicht sein Maximum an.
+
+		Insbesondere gilt, falls $\Omega$ beschränkt ist und $f$ stetig auf $\overline{\Omega}$ fortgesetzt werden kann:
+		\[
+			\sup_{\Omega} \lvert f \rvert = \sup_{\partial \Omega} \lvert f \rvert.
+		\]
+	\end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Der (oder vielleicht doch \emph{die}?) Logarithmus (Logarithmen?)}
+	\begin{theorem}
+		Sei $\Omega \subset \mathbb{C}$ offen und einfach zusammenhängend und sei $f \colon \Omega \to \mathbb{C}$ holomorph mit $f(z) \neq 0$ für alle $z \in \Omega$.
+		Dann existiert eine holomorphe Abbildung $g \colon \Omega \to \mathbb{C}$ mit
+		\[
+			f(z) = \mathrm{e}^{g(z)} \qquad \forall z \in \Omega.
+		\]
+		\pause
+		Die Funktion $g$ ist eindeutig bis auf Addition von $2 \pi \iu k$ mit $k \in \mathbb{Z}$.
+	\end{theorem}
+	\pause
+	\begin{corollary}
+		Sei $\Omega \subset \mathbb{C}$ offen und einfach zusammenhängend mit $0 \notin \Omega$ und sodass ein $R \in \Omega \cap (0, \infty)$ existiert.
+		Dann existiert eine holomorphe Funktion $g$ in $\Omega$ mit $z = \mathrm{e}^{g(z)}$ für alle $z \in \Omega$ und sodass $g(r) = \log(r)$ für $r \in \Omega \cap (0, \infty)$ nahe $R$.
+	\end{corollary}
+	\pause
+	Der sogenannte \emph{Hauptzweig des Logarithmus} ist in der geschlitzten Ebene $\mathbb{C} \setminus (-\infty, 0]$ definiert als
+	\[
+		\operatorname{Log} z = \ln r + \iu \theta \text{ für } z = r \mathrm{e}^{\iu \theta}, \ \theta \in (- \pi, \pi).
+	\]
+\end{frame}
+\end{document}
