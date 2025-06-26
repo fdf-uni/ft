@@ -66,13 +66,13 @@ Insbesondere falls man Umlaufzahlen kennt, ist aber vielleicht diese Interpretat
         r = \limsup_{n \to \infty} \sqrt[n]{\lvert a_{-n} \rvert} \qquad \text{und} \qquad \frac{1}{R} = \limsup_{n \to \infty} \sqrt[n]{\lvert a_n \rvert}
     \\]
     mit den üblichen Konventionen falls $$r$$ oder $$R$$ einen der Werte $$\{0, \infty\}$$ annehmen.
-    Mit demselben Argument wie für Potenzreihen zeigt man, dass die Konvergenz lokal gleichmäßig ist (oder verwendet ein geeignetes Konvergenzkriterium), um zu beweisen, dass bei der Berechnung von Kurvenintegralen Laurent-Reihen termweise integriert werden können.
+    Mit demselben Argument wie für Potenzreihen zeigt man, dass die Konvergenz lokal gleichmäßig ist (oder verwendet ein geeignetes Konvergenzkriterium), um zu beweisen, dass bei der Berechnung von Kurvenintegralen über im Konvergenzbereich enthaltenen Kurven Laurent-Reihen termweise integriert werden können.
     Sei nun $$f \colon \Omega \setminus \{z_0\} \to \mathbb{C}$$ holomorph mit einer isolierten (eventuell wesentlichen) Singularität bei $$z_0$$.
     Für klein genuges $$\epsilon > 0$$ konvergiert die Laurent-Entwicklung $$\sum_{n=-\infty}^{\infty} a_n (z - z_0)^n$$ von $$f$$ auf der punktierten Kreisscheibe $$B_{\epsilon}(z_0) \setminus \{z_0\}$$ (das folgt aus der Tatsache, dass die Singularität isoliert ist) und es folgt
     \\[
         \int_{C_{\epsilon}(z_0)} f(z) \,\mathrm{d}z = \sum_{n = -\infty}^{\infty} \int_{C_{\epsilon}(z_0)} a_n (z - z_0)^n \,\mathrm{d}z = 2 \pi \mathrm{i} a_{-1},
     \\]
-    was mit dem üblichen "Korridor-Argument" den Residuensatz liefert.
+    was mit dem üblichen "Korridor-/Schlüsselloch-Argument" den Residuensatz liefert.
 
 ## Fun Facts
 
