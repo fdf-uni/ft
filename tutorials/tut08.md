@@ -36,7 +36,7 @@ Der Einfachheit halber wird hier anstelle von $$C$$ der Einheitskreis betrachtet
 
 Wir sehen, dass die Ordnung der Null- oder Polstelle mit der Gesamtanzahl an Umdrehungen des oben beschriebenen Pfeils übereinstimmt, wobei die Richtung, in welche rotiert wird, angibt, ob es sich um eine Null- oder Polstelle handelt.
 
-Man vergleiche auch die entstehenden Einfärbungen des Einheitskreises mit den [letzte Woche](./tut07.md) besprochenen domain colorings, insbesondere dem Ablesen von Null- und Polstellen mitsamt Ordnung aus diesen, was wie wir nun gesehen haben aufgrund des Argumentprinzips funktioniert (s. für Details beispielsweise das letzte Woche verlinkte Buch von E. Wegert).
+Man vergleiche auch die entstehenden Einfärbungen des Einheitskreises, die auf der jeweiligen Richtung basieren, mit den [letzte Woche](./tut07.md) kurz besprochenen domain colorings, insbesondere dem Ablesen von Null- und Polstellen mitsamt Ordnung aus diesen, was wie wir nun gesehen haben aufgrund des Argumentprinzips funktioniert (s. für Details beispielsweise das letzte Woche verlinkte Buch von E. Wegert).
 
 Natürlich ist obige Argumentation nicht allzu rigoros (wer will, kann sich gerne überlegen, wo Lücken sind und versuchen, diese zu schließen).
 
@@ -77,5 +77,8 @@ Insbesondere falls man Umlaufzahlen kennt, ist aber vielleicht diese Interpretat
 ## Fun Facts
 
 Siehe obige Visualisierung des Argumentprinzips. :)
+
+Außerdem als Antwort auf eine Frage aus dem Mittwochs-Tutorium: Es gilt auch ein Minimumprinzip für holomorphe Funktionen, allerdings nur unter der Voraussetzung, dass die entsprechende Funktion $$f$$ im Gebiet $$\Omega$$ keine Nullstelle besitzt (denn falls sie dies tut, ist an der Nullstelle natürlich ein Minimum von $$\lvert f \rvert$$ innerhalb von $$\Omega$$).
+Mit dieser Zusatzvoraussetzung folgt das Minimumprinzip aber entweder auch mithilfe des Satzes von der offenen Abbildung oder vermutlich deutlich kürzer aus dem Maximumprinzip, indem man $$\frac{1}{f}$$ statt $$f$$ betrachtet, was wegen Mangel an Nullstellen von $$f$$ holomorph ist: Dann nimmt $$\frac{1}{\lvert f \rvert}$$ auf $$\Omega$$ nicht sein Maximum, also $$\lvert f \rvert$$ nicht sein Minimum an.
 
 ---
