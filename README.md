@@ -32,6 +32,8 @@ Wichtiger sind vermutlich eher die einzelnen Tutoriumsseiten (s. u.), welche wie
 - [Tutorium 6](./tutorials/tut06.md)
 - [Tutorium 7](./tutorials/tut07.md)
 - [Tutorium 8](./tutorials/tut08.md)
+- [Tutorium 8.5](./tutorials/tut08p5.md)
+- [Tutorium 9](./tutorials/tut09.md)
 
 ---
 

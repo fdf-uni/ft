@@ -1,0 +1,86 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 10}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{7. und 8. Juli 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Konforme Abbildungen}
+	\begin{definition}
+		Seien $U, V \subset \mathbb{C}$ offen.
+		Eine Abbildung $f \colon U \to V$ heißt \emph{konform}, falls sie holomorph und bijektiv ist.
+
+		\pause
+		Existiert eine konforme Abbildung $f \colon U \to V$, so heißen $U$ und $V$ \emph{konform äquivalent}.
+	\end{definition}
+	\pause
+	\textbf{Bemerkung.} Ist $f$ konform, so ist $f'(z) \neq 0$ für alle $z \in U$ und $f^{-1} \colon V \to U$ ist ebenfalls holomorph.
+\end{frame}
+\begin{frame}
+	\frametitle{Das Lemma von Schwarz}
+	\pause
+	Im Folgenden bezeichne $\mathbb{D}$ die Einheitskreisscheibe.
+	\pause
+	\begin{lemma}
+		Sei $f \colon \mathbb{D} \to \mathbb{D}$ holomorph mit $f(0) = 0$.
+		Dann gilt
+		\pause
+		\begin{enumerate}
+			\item $\lvert f(z) \rvert \le \lvert z \rvert$ für alle $z \in \mathbb{D}$.
+			      Gleichheit gilt genau dann für ein $0 \neq z_0 \in \mathbb{D}$, wenn $f(z) = \mathrm{e}^{\iu \theta} z$ für alle $z \in \mathbb{D}$ und ein $\theta \in \mathbb{R}$.
+			      \pause
+			\item $\lvert f'(0) \rvert \le 1$ und Gleichheit gilt genau dann, wenn $f(z) = \mathrm{e}^{\mathrm{i} \theta} z$ für alle $z \in \mathbb{D}$ und ein $\theta \in \mathbb{R}$.
+		\end{enumerate}
+	\end{lemma}
+\end{frame}
+\begin{frame}
+	\frametitle{Automorphismen von offenen Teilmengen von $\mathbb{C}$}
+	\pause
+	\begin{definition}
+		Sei $\Omega \subset \mathbb{C}$ offen.
+		Eine konforme Abbildung $f \colon \Omega \to \Omega$ heißt \emph{Automorphismus} von $\Omega$.
+		Wir schreiben
+		\[
+			\operatorname{Aut}(\Omega) := \{f \colon \Omega \to \Omega : f \text{ ist ein Automorphismus} \}.
+		\]
+	\end{definition}
+	\pause
+	In der Vorlesung wurde gezeigt:
+	\pause
+	\begin{align*}
+		\operatorname{Aut}(\mathbb{D}) & = \{\mathrm{e}^{\iu \theta} \psi_{\alpha} : \theta \in \mathbb{R}, \alpha \in \mathbb{D} \}, \qquad \psi_{\alpha}(z) = \frac{\alpha - z}{1 - \overline{\alpha} z}. \\
+		\operatorname{Aut}(\mathbb{H}) & = \left\{ z \mapsto \frac{a z + b}{c z + d} : a, b, c, d \in \mathbb{R}, ad - bc = 1 \right\}.
+	\end{align*}
+	Hierbei bezeichnet $\mathbb{H} = \{z \in \mathbb{C} : \Im(z) > 0 \}$ die obere komplexe Halbebene.
+\end{frame}
+\begin{frame}
+	\frametitle{Der Riemannsche Abbildungssatz}
+	\pause
+	\begin{theorem}[Riemann]
+		Sei $\emptyset \neq \Omega \subsetneq \mathbb{C}$ offen und einfach zusammenhängend.
+		Dann existiert für jedes $z_0 \in \Omega$ eine eindeutige konforme Abbildung $F \colon \Omega \to \mathbb{D}$ mit
+		\[
+			F(z_0) = 0 \qquad \text{ und } \qquad F'(z_0) > 0.
+		\]
+	\end{theorem}
+	\pause
+	Insbesondere sind alle offenen, nicht-leeren, einfach zusammenhängenden echte Teilmengen von $\mathbb{C}$ konform äquivalent.
+
+	\pause
+	Wir wiederholen an dieser Stelle nicht die Sätze von Arzelà–Ascoli und Montel, allerdings ist gerade Ersterer natürlich extrem wichtig, auch über die Funktionentheorie hinaus.
+\end{frame}
+\end{document}
