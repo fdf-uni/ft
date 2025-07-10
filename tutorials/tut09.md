@@ -20,6 +20,7 @@ Für Teil (i):
 - (Mögliche Teil-)Intuition zu Blaschke-Faktoren: Für jedes $$\alpha \in \mathbb{D}$$ ist $$\psi_{\alpha}$$ eine konforme Abbildung $$\mathbb{D} \to \mathbb{D}$$, welche "die Rollen von $$0$$ und $$\alpha$$ vertauscht".
 - Geometrische Überlegung zum Lemma von Schwarz: Entweder wandert unter der Abbildung jeder Punkt (bis auf $$0$$) näher zum Ursprung oder es handelt sich bei der Abbildung nur um eine Rotation der Kreisscheibe.
     In diesem Fall kann diese Vorstellung recht viel helfen: Da wir einen Fixpunkt ungleich dem Ursprung haben, der also insbesondere nicht näher zum Ursprung geht, muss es sich um eine Rotation handeln, und wieder aufgrund der Fixierung dieses Punktes muss diese trivial sein.
+
 Für Teil (ii):
 - Um holomorphe Funktionen auf einer gegebenen offenen Menge zu analysieren, kann es hilfreich sein, konforme Äquivalenz auszunutzen. In diesem Fall nutzen wir, dass wenn $$U$$ und $$V$$ konform äquivalent sind, entweder sowohl $$U$$ als auch $$V$$ die Fixpunkteigenschaft für holomorphe Funktionen besitzen oder beide nicht.
     Dann wird die Aufgabe deutlich leichter, weil es signifikant einfachere fixpunktfreie, holomorphe Abbildungen $$H \to H$$ als $$\mathbb{D} \to \mathbb{D}$$ gibt.
