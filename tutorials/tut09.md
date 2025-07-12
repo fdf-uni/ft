@@ -2,7 +2,7 @@
 
 [Zurück zur Startseite](../README.md)
 
-[Foliensatz](../assets/tut10/presentation.pdf)
+[Foliensatz](../assets/tut09/presentation.pdf)
 
 ## Kurzprotokoll
 Nach einer Besprechung des obigen Foliensatzes wurden zunächst Aufgaben 3 und 4 sowie zuletzt Aufgabe 2 des aktuellen Arbeitsblattes besprochen.
