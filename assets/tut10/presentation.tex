@@ -1,0 +1,133 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 10}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{14. und 15. Juli 2025}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Unendliche Produkte}
+	\pause
+	\begin{definition}
+		Sei $(a_n) \subset \mathbb{C}$.
+		Wir sagen, dass das Produkt
+		\[
+			\prod_{n=1}^{\infty} (1 + a_n)
+		\]
+		gegen $L$ konvergiert, falls $L := \lim_{N \to \infty} \prod_{n = 1}^{N} (1 + a_n)$ existiert.
+	\end{definition}
+	\pause
+	\begin{lemma}
+		Falls $\sum_{n = 1}^{\infty} \lvert a_n \rvert < \infty$ gilt, so konvergiert $\prod_{n = 1}^{\infty} (1 + a_n)$ und der Grenzwert des Produkts ist genau dann $0$, wenn einer der Faktoren $0$ ist.
+	\end{lemma}
+\end{frame}
+\begin{frame}
+	\frametitle{Unendliche Produkte}
+	\begin{proposition}
+		Sei $\Omega \subset \mathbb{C}$ offen und $F_n \colon \Omega \to \mathbb{C}$, $n \in \mathbb{N}$, eine Folge holomorpher Funktionen.
+		Falls $(c_n)_{n \in \mathbb{N}} \subset (0, \infty)$ existiert, sodass
+		\[
+			\forall z \in \Omega : \lvert F_n(z) - 1 \rvert \le c_n \qquad \text{und} \qquad \sum_{n = 1}^{\infty} c_n < \infty,
+		\]
+		so gilt:
+		\begin{enumerate}
+			\pause
+			\item $\prod_{n = 1}^{\infty} F_n(z)$ konvergiert \emph{gleichmäßig} in $\Omega$ gegen eine holomorphe Funktion $G \colon \Omega \to \mathbb{C}$.
+			      \pause
+			\item Für jedes $z \in \Omega$ gilt $G(z) = 0$ genau dann, wenn $F_n(z) = 0$ für ein $n \in \mathbb{N}$.
+			      \pause
+			\item Falls $G(z) \neq 0$ für ein $z \in \Omega$ ist, so gilt
+			      \[
+				      \frac{G'(z)}{G(z)} = \sum_{n = 1}^{\infty} \frac{F_n'(z)}{F_n(z)}.
+			      \]
+		\end{enumerate}
+	\end{proposition}
+\end{frame}
+\begin{frame}
+	\frametitle{Das Eulerprodukt für $\sin$}
+	\begin{theorem}[Euler]
+		Es gilt
+		\[
+			\frac{\sin \pi z}{\pi} = z \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2} \right).
+		\]
+	\end{theorem}
+	\pause
+	Frage: Können wir auch andere holomorphe Funktionen \glqq faktorisieren\grqq?
+\end{frame}
+\begin{frame}
+	\frametitle{Der Weierstraß'sche Produktsatz}
+	\pause
+	\begin{definition}[Weierstraß'sche Elementarfaktoren]
+		Für $k \in \mathbb{N}_0$ definieren wir die folgenden holomorphen Funktionen:
+		\[
+			E_0(z) = 1 - z, \qquad E_k(z) := (1 - z) \mathrm{e}^{z + \frac{z^2}{2} + \dots + \frac{z^k}{k}}.
+		\]
+	\end{definition}
+	\pause
+	Motivation: Hat $f$ Nullstellen $(a_n)_{n \in \mathbb{N}}$, so konvergiert \glqq naive\grqq{} Faktorisierung $\prod_{k = 1}^{\infty} (a_n - z)$ nicht notwendigerweise!
+	\pause
+	Gibt es bessere Faktoren, sagen wir mit Nullstelle $1$, also als $1 - z$?
+	\pause
+
+	Offensichtlich hat jedes $E_k$ eine einfache Nullstelle bei $1$.
+	\pause
+	Zudem gilt für $z \in \mathbb{C}$ mit $\lvert z \rvert < 1$, dass
+	\[
+		1 - z = \exp(\operatorname{Log}(1 - z)) = \exp\left(- \sum_{k = 1}^{\infty} \frac{z^k}{k}\right).
+	\]
+	\pause
+	Daher kann $E_k(z) = (1 - z) \exp\left(\sum_{k = 1}^{n} \frac{z^k}{k}\right)$ für $\lvert z \rvert \le 1$ beliebig nahe bei $1$ gewählt werden, vgl. Lemma 4.7, wodurch stets Konvergenz erreicht werden kann.
+\end{frame}
+\begin{frame}
+	\frametitle{Der Weierstraß'sche Produktsatz}
+	\pause
+	\begin{theorem}[Weierstraß]
+		Sei $(a_n)_{n \in \mathbb{N}} \subset \mathbb{C}$ mit $\lvert a_n \rvert \to \infty$.
+		Dann existiert eine ganze Funktion $f$ mit Nullstellen genau bei den $a_n$ (mit Vielfachheit).
+		Jede andere solche ganze Funktion  ist von der Form $f \mathrm{e}^g$ mit $g$ ganz.
+	\end{theorem}
+	\pause
+	Der Beweis aus dem Skript liefert mit $m := \#\{n : a_n = 0\}$ und $(b_n)_{n \in \mathbb{N}}$ als der Folge $(a_n)_{n \in \mathbb{N}}$ ohne den Wert $0$, dass
+	\[
+		f(z) = z^m \prod_{n = 1}^{\infty} E_n\left(\frac{z}{b_n}\right).
+	\]
+\end{frame}
+\begin{frame}
+	\frametitle{Produktsatz von Hadamard}
+	\pause
+	\begin{definition}
+		Eine ganze Funktion $f$ hat Wachstumsordnung $\le \rho$, falls Konstanten $A, B > 0$ existieren, sodass
+		\begin{equation}\label{eq:growth_order}
+			\lvert f(z) \rvert \le A \mathrm{e}^{B \lvert z \rvert^{\rho}}
+		\end{equation}
+		für alle $z \in \mathbb{C}$ gilt.
+		\pause
+		\emph{Die Wachstumsordnung} $\rho_0$ von $f$ ist das Infimum über alle $\rho$, für welche (\ref{eq:growth_order}) erfüllt ist.
+	\end{definition}
+	\pause
+	\begin{theorem}[Hadamard]
+		Seien $f$, $m$ und $(b_n)_{n \in \mathbb{N}}$ wie auf der vorherigen Folie.
+		$f$ habe zudem Wachstumsordnung $\rho_0$ und $k \in \mathbb{Z}$ sei so gewählt, dass $k \le \rho_0 < k + 1$ (d.h. $k = \lfloor \rho_0 \rfloor$).
+		Dann gilt
+		\[
+			f(z) = {\only<5-6>{\color{orange}}\mathrm{e}^{P(z)}} z^m \prod_{n = 1}^{\infty} E_{\only<6>{\color{red}}k} \left( \frac{z}{b_n} \right),
+		\]
+		wobei $P$ ein Polynom von Grad $\le k$ ist.
+	\end{theorem}
+\end{frame}
+\end{document}
