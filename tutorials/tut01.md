@@ -8,7 +8,7 @@
 
 Nach einer kurzen Wiederholung von Holomorphie und ein wenig Intuition zu den Cauchy-Riemann-Gleichungen (s. Foliensatz), besprachen wir Aufgaben 1 bis 3.
 
-Hinsichtlich der Cauchy-Riemann-Gleichungen haben wir auch kurz über konforme Abbildungen geredet, was in Kapitel 6, Aufgabe 2 von Stein, Shakarchi genauer formuliert wird (jetzt aber vielleicht noch nicht unbedingt sauber bewiesen werden kann und dem Vorlesungsstoff vorgreifen würde).
+Hinsichtlich der Cauchy-Riemann-Gleichungen haben wir auch kurz über konforme Abbildungen geredet, was in Kapitel 8, Problem 2 von Stein, Shakarchi genauer formuliert wird (jetzt aber vielleicht noch nicht unbedingt sauber bewiesen werden kann und dem Vorlesungsstoff vorgreifen würde).
 
 Eine schöne Animation, welche auch kurz gezeigt wurde, findet sich in [diesem Youtube-Video](https://www.youtube.com/watch?v=0CHZMY02Dhk&t=640s).
 
