@@ -1,8 +1,8 @@
 # Tutorium 3
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut03/presentation.pdf)
+[Foliensatz](../../assets/2025/tut03/presentation.pdf)
 
 ## Kurzprotokoll
 Nach der Besprechung der benötigten Sätze und Definitionen im Foliensatz sprachen wir über die Aufgaben.

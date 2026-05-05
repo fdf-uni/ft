@@ -1,8 +1,8 @@
 # Tutorium 10
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut10/presentation.pdf)
+[Foliensatz](../../assets/2025/tut10/presentation.pdf)
 
 ## Kurzprotokoll
 Es gab auch diese Woche nichts Außergewöhnliches: Nach der Besprechung des Foliensatzes gingen wir direkt zu den Aufgaben über.

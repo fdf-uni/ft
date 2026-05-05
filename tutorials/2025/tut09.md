@@ -1,8 +1,8 @@
 # Tutorium 9
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut09/presentation.pdf)
+[Foliensatz](../../assets/2025/tut09/presentation.pdf)
 
 ## Kurzprotokoll
 Nach einer Besprechung des obigen Foliensatzes wurden zunächst Aufgaben 3 und 4 sowie zuletzt Aufgabe 2 des aktuellen Arbeitsblattes besprochen.

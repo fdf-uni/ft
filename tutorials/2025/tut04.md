@@ -1,8 +1,8 @@
 # Tutorium 4
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut04/presentation.pdf)
+[Foliensatz](../../assets/2025/tut04/presentation.pdf)
 
 ## Kurzprotokoll
 Wir gingen kurz über den Foliensatz, wobei wir auch [diese Animation](https://upload.wikimedia.org/wikipedia/commons/7/7e/HomotopySmall.gif) zu homotopen Kurven besprachen, welche eine mögliche Intuition für Homotopie demonstriert, nämlich den (bei uns) zweiten Parameter als Zeitvariable aufzufassen.

@@ -1,8 +1,8 @@
 # Tutorium 7
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut07/presentation.pdf)
+[Foliensatz](../../assets/2025/tut07/presentation.pdf)
 
 ## Kurzprotokoll
 Wir haben zu Beginn den Foliensatz (s.o.) besprochen.

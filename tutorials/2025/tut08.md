@@ -1,8 +1,8 @@
 # Tutorium 8
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut08/presentation.pdf)
+[Foliensatz](../../assets/2025/tut08/presentation.pdf)
 
 ## Kurzprotokoll
 Wie auch die anderen Tutorien begann dieses Tutorium mit der Besprechung des oben verlinkten Foliensatzes und endete mit der Besprechung der Aufgaben.
@@ -31,7 +31,7 @@ Dies ist in der folgenden Animation dargestellt, die wir in den Tutorien angesch
 Der Einfachheit halber wird hier anstelle von $$C$$ der Einheitskreis betrachtet:
 
 {:refdef: style="text-align: center;"}
-![Veranschaulichung des Argumentprinzips](../assets/tut08/argument_principle.gif)
+![Veranschaulichung des Argumentprinzips](../../assets/2025/tut08/argument_principle.gif)
 {: refdef}
 
 Wir sehen, dass die Ordnung der Null- oder Polstelle mit der Gesamtanzahl an Umdrehungen des oben beschriebenen Pfeils übereinstimmt, wobei die Richtung, in welche rotiert wird, angibt, ob es sich um eine Null- oder Polstelle handelt.

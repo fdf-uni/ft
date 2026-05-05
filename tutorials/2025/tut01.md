@@ -1,8 +1,8 @@
 # Tutorium 1
 
-[Zurück zur Startseite](../README.md)
+[Zurück zur Startseite](../../README.md)
 
-[Foliensatz](../assets/tut01/presentation.pdf)
+[Foliensatz](../../assets/2025/tut01/presentation.pdf)
 
 ## Kurzprotokoll
 
