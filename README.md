@@ -24,7 +24,7 @@ Wichtiger sind vermutlich eher die einzelnen Tutoriumsseiten (s. u.), welche wie
 ## Links zu den (bisherigen) Tutoriumsseiten
 
 - [Tutorium 1](./tutorials/2026/tut01.md)
-- [Tutorium 1](./tutorials/2026/tut02.md)
+- [Tutorium 2](./tutorials/2026/tut02.md)
 
 Im Folgenden finden sich auch noch die Unterlagen aus dem Vorjahr.
 Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber nichtsdestotrotz finden sich vielleicht doch ein paar interessante zusätzliche Informationen (gerade Tutorium 0 hat dieses Jahr nicht stattgefunden). :)
@@ -32,18 +32,18 @@ Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber n
 <details>
 <summary>Tutoriumsunterlagen aus 2025</summary>
 <ul>
-<li><a href="./tutorials/2025/tut00.md">Tutorium 0</a></li>
-<li><a href="./tutorials/2025/tut01.md">Tutorium 1</a></li>
-<li><a href="./tutorials/2025/tut02.md">Tutorium 2</a></li>
-<li><a href="./tutorials/2025/tut03.md">Tutorium 3</a></li>
-<li><a href="./tutorials/2025/tut04.md">Tutorium 4</a></li>
-<li><a href="./tutorials/2025/tut05.md">Tutorium 5</a></li>
-<li><a href="./tutorials/2025/tut06.md">Tutorium 6</a></li>
-<li><a href="./tutorials/2025/tut07.md">Tutorium 7</a></li>
-<li><a href="./tutorials/2025/tut08.md">Tutorium 8</a></li>
-<li><a href="./tutorials/2025/tut08p5.md">Tutorium 8.5</a></li>
-<li><a href="./tutorials/2025/tut09.md">Tutorium 9</a></li>
-<li><a href="./tutorials/2025/tut10.md">Tutorium 10</a></li>
+<li><a href="./tutorials/2025/tut00.html">Tutorium 0</a></li>
+<li><a href="./tutorials/2025/tut01.html">Tutorium 1</a></li>
+<li><a href="./tutorials/2025/tut02.html">Tutorium 2</a></li>
+<li><a href="./tutorials/2025/tut03.html">Tutorium 3</a></li>
+<li><a href="./tutorials/2025/tut04.html">Tutorium 4</a></li>
+<li><a href="./tutorials/2025/tut05.html">Tutorium 5</a></li>
+<li><a href="./tutorials/2025/tut06.html">Tutorium 6</a></li>
+<li><a href="./tutorials/2025/tut07.html">Tutorium 7</a></li>
+<li><a href="./tutorials/2025/tut08.html">Tutorium 8</a></li>
+<li><a href="./tutorials/2025/tut08p5.html">Tutorium 8.5</a></li>
+<li><a href="./tutorials/2025/tut09.html">Tutorium 9</a></li>
+<li><a href="./tutorials/2025/tut10.html">Tutorium 10</a></li>
 </ul>
 </details>
 
