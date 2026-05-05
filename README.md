@@ -31,19 +31,20 @@ Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber n
 
 <details>
 <summary>Tutoriumsunterlagen aus 2025</summary>
-
-- [Tutorium 0](./tutorials/2025/tut00.md)
-- [Tutorium 1](./tutorials/2025/tut01.md)
-- [Tutorium 2](./tutorials/2025/tut02.md)
-- [Tutorium 3](./tutorials/2025/tut03.md)
-- [Tutorium 4](./tutorials/2025/tut04.md)
-- [Tutorium 5](./tutorials/2025/tut05.md)
-- [Tutorium 6](./tutorials/2025/tut06.md)
-- [Tutorium 7](./tutorials/2025/tut07.md)
-- [Tutorium 8](./tutorials/2025/tut08.md)
-- [Tutorium 8.5](./tutorials/2025/tut08p5.md)
-- [Tutorium 9](./tutorials/2025/tut09.md)
-- [Tutorium 10](./tutorials/2025/tut10.md)
+<ul>
+<li><a href="./tutorials/2025/tut00.md">Tutorium 0</a></li>
+<li><a href="./tutorials/2025/tut01.md">Tutorium 1</a></li>
+<li><a href="./tutorials/2025/tut02.md">Tutorium 2</a></li>
+<li><a href="./tutorials/2025/tut03.md">Tutorium 3</a></li>
+<li><a href="./tutorials/2025/tut04.md">Tutorium 4</a></li>
+<li><a href="./tutorials/2025/tut05.md">Tutorium 5</a></li>
+<li><a href="./tutorials/2025/tut06.md">Tutorium 6</a></li>
+<li><a href="./tutorials/2025/tut07.md">Tutorium 7</a></li>
+<li><a href="./tutorials/2025/tut08.md">Tutorium 8</a></li>
+<li><a href="./tutorials/2025/tut08p5.md">Tutorium 8.5</a></li>
+<li><a href="./tutorials/2025/tut09.md">Tutorium 9</a></li>
+<li><a href="./tutorials/2025/tut10.md">Tutorium 10</a></li>
+</ul>
 </details>
 
 ---
