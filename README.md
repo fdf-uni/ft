@@ -23,18 +23,28 @@ Wichtiger sind vermutlich eher die einzelnen Tutoriumsseiten (s. u.), welche wie
 
 ## Links zu den (bisherigen) Tutoriumsseiten
 
-- [Tutorium 0](./tutorials/tut00.md)
-- [Tutorium 1](./tutorials/tut01.md)
-- [Tutorium 2](./tutorials/tut02.md)
-- [Tutorium 3](./tutorials/tut03.md)
-- [Tutorium 4](./tutorials/tut04.md)
-- [Tutorium 5](./tutorials/tut05.md)
-- [Tutorium 6](./tutorials/tut06.md)
-- [Tutorium 7](./tutorials/tut07.md)
-- [Tutorium 8](./tutorials/tut08.md)
-- [Tutorium 8.5](./tutorials/tut08p5.md)
-- [Tutorium 9](./tutorials/tut09.md)
-- [Tutorium 10](./tutorials/tut10.md)
+- [Tutorium 1](./tutorials/2026/tut01.md)
+- [Tutorium 1](./tutorials/2026/tut02.md)
+
+Im Folgenden finden sich auch noch die Unterlagen aus dem Vorjahr.
+Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber nichtsdestotrotz finden sich vielleicht doch ein paar interessante zusätzliche Informationen (gerade Tutorium 0 hat dieses Jahr nicht stattgefunden). :)
+
+<details>
+<summary>Tutoriumsunterlagen aus 2025</summary>
+
+- [Tutorium 0](./tutorials/2025/tut00.md)
+- [Tutorium 1](./tutorials/2025/tut01.md)
+- [Tutorium 2](./tutorials/2025/tut02.md)
+- [Tutorium 3](./tutorials/2025/tut03.md)
+- [Tutorium 4](./tutorials/2025/tut04.md)
+- [Tutorium 5](./tutorials/2025/tut05.md)
+- [Tutorium 6](./tutorials/2025/tut06.md)
+- [Tutorium 7](./tutorials/2025/tut07.md)
+- [Tutorium 8](./tutorials/2025/tut08.md)
+- [Tutorium 8.5](./tutorials/2025/tut08p5.md)
+- [Tutorium 9](./tutorials/2025/tut09.md)
+- [Tutorium 10](./tutorials/2025/tut10.md)
+</details>
 
 ---
 
