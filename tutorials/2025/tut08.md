@@ -1,6 +1,6 @@
-# Tutorium 8
-
-[Zurück zur Startseite](../../README.md)
+---
+title: Tutorium 8
+---
 
 [Foliensatz](../../assets/2025/tut08/presentation.pdf)
 

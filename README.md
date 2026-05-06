@@ -1,10 +1,13 @@
-# Tutorien zur Funktionentheorie
+---
+title: Tutorien zur Funktionentheorie
+permalink: /
+---
 
 [Zur Liste der Tutorien](#links-zu-den-bisherigen-tutoriumsseiten)
 
 ## Was ist das hier?
 
-Auf dieser Website (bzw. in diesem Git-Repository, für diejenigen, denen dieser Begriff etwas sagt) findet ihr inoffizielle Unterlagen und Informationen zu den von mir gehaltenen Funktionentheorie-Tutorien.
+Auf dieser Website (bzw. in [diesem Git-Repository](https://github.com/fdf-uni/ft), für diejenigen, denen dieser Begriff etwas sagt) findet ihr inoffizielle Unterlagen und Informationen zu den von mir gehaltenen Funktionentheorie-Tutorien.
 
 Diese sind wie bereits erwähnt in keinster Weise offiziell, bei weitem nicht vollständig (insbesondere kein Ersatz zum Vorlesungsbetrieb!!!), sehr sicher an der ein oder anderen Stelle mathematisch nicht all zu rigoros und vor allem (leider) höchstwahrscheinlich nicht komplett fehlerfrei.
 

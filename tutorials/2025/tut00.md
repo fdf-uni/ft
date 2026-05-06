@@ -1,6 +1,6 @@
-# Tutorium 0
-
-[Zurück zur Startseite](../../README.md)
+---
+title: Tutorium 0
+---
 
 ## Kurzprotokoll
 

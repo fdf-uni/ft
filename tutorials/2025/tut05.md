@@ -1,6 +1,6 @@
-# Tutorium 5
-
-[Zurück zur Startseite](../../README.md)
+---
+title: Tutorium 5
+---
 
 Anstelle eines Foliensatzes gibt es diese Woche einen (sehr ausführlichen) Überblick zur [Partialbruchzerlegung](../../assets/2025/tut05/partialbruchzerlegung.pdf), da wir für die Bearbeitung der Übungen kaum neue Resultate benötigt haben (die entsprechenden Sätze aus der Vorlesung sind natürlich trotzdem sehr wichtig, auch für spätere Themen wie Gamma- und Zetafunktion!!!).
 Die Zusammenfassung ist möglichst aus "Sicht der Funktionentheorie" geschrieben und geht dementsprechend hauptsächlich auf die Berechnung von Kurvenintegralen und Potenzreihenentwicklungen mithilfe dieser ein.

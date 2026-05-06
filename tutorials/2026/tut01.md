@@ -1,6 +1,6 @@
-# Tutorium 1
-
-[Zurück zur Startseite](../../README.md)
+---
+title: Tutorium 1
+---
 
 [Foliensatz](../../assets/2026/tut01/presentation.pdf)
 
@@ -26,7 +26,7 @@ Für weitere (von vielen möglichen) Interpretation der Cauchy-Riemann-Gleichung
 - Trick, Ungleichungen iterativ anzuwenden, um Ungleichungen "im Grenzwert" zu beweisen (vgl. z.B. auch Beweis des Banachschen Fixpunktsatzes, wie er etwa in [Forster - Analysis 2](https://link.springer.com/book/10.1007/978-3-658-45812-6) gefunden werden kann).
 
 ### Aufgabe 3
-- Der Entwicklungspunkt von Potenzreihen kann _innerhalb des Konvergenzkreises_ verschoben werden.
+- Der Entwicklungspunkt von Potenzreihen kann _innerhalb des Konvergenzkreises_ verschoben werden (unter Anpassung des Konvergenzradius).
 - Binomischer Lehrsatz.
 - Rigoroses Argumentieren beim Vertauschen von Doppelreihen (z.B. Fubini mit Zählmaß (streng genommen in dieser Form eigentlich Pringsheim zuzuschreiben und in gewisser Weise implizit in manchen Beweisen von Fubini verwendet) oder mithilfe von summierbaren Familien, vgl. [Königsberger  - Analysis 1](https://link.springer.com/book/10.1007/978-3-642-18490-1)).
 

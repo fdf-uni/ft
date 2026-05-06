@@ -1,6 +1,6 @@
-# Tutorium 4
-
-[Zurück zur Startseite](../../README.md)
+---
+title: Tutorium 4
+---
 
 [Foliensatz](../../assets/2025/tut04/presentation.pdf)
 
