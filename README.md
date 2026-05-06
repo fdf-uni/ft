@@ -33,7 +33,7 @@ Im Folgenden finden sich auch noch die Unterlagen aus dem Vorjahr.
 Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber nichtsdestotrotz finden sich vielleicht doch ein paar interessante zusätzliche Informationen (gerade Tutorium 0 hat dieses Jahr nicht stattgefunden). :)
 
 <details>
-<summary>Tutoriumsunterlagen aus 2025</summary>
+<summary>Tutoriumsunterlagen 2025</summary>
 <ul>
 <li><a href="./tutorials/2025/tut00.html">Tutorium 0</a></li>
 <li><a href="./tutorials/2025/tut01.html">Tutorium 1</a></li>
