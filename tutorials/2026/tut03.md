@@ -5,6 +5,7 @@ title: Tutorium 3
 [Foliensatz](../../assets/2026/tut03/presentation.pdf)
 
 ## Kurzprotokoll
+
 Zu Beginn wurde der Foliensatz besprochen, und daraufhin die Aufgaben dieser Woche.
 
 ## Zum Mitnehmen
@@ -31,6 +32,7 @@ Zu Beginn wurde der Foliensatz besprochen, und daraufhin die Aufgaben dieser Woc
 - Hier ist vielleicht die Aussage das Interessanteste, der Beweis ist sehr ähnlich zu bereits in der Vorlesung Gesehenen.
 
 ## Fun Facts
+
 In Aufgabe 2 haben wir das Integral $$I := \int_{-\infty}^{\infty} \mathrm{e}^{-x^2} \,\mathrm{d}x = \sqrt{\pi}$$ verwendet, auch bekannt als [Gaußsches Integral](https://en.wikipedia.org/wiki/Gaussian_integral).
 Hierzu könnte man aufgrund der weitreichenden Anwendungen dieses Integrals (beispielsweise in der Stochastik oder im Zusammenhang mit der Fouriertransformation) sicherlich sehr viele Fakten und Berechnungsmethoden aufzählen, aber hier vielleicht nur zwei meiner persönlichen Favoriten:
 - Das Integral kann sehr elegant mithilfe von Methoden der Funktionentheorie (um genau zu sein, dem Residuensatz) berechnet werden (s. Example 3.10 im Skript von Prof. Frank).

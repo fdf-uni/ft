@@ -1,0 +1,69 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath, amssymb}
+
+\usetheme{Boadilla}
+
+\author[\url{https://fdf-uni.github.io/ft}]{}
+\title{Tutorium 4}
+\subtitle{\texorpdfstring{Funktionentheorie\vspace*{-1.5cm}}{Funktionentheorie}}
+\date{15. \& 19. Mai 2026}
+
+\newcommand{\iu}{\mathrm{i}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\begin{document}
+\begin{frame}
+	\titlepage
+\end{frame}
+\begin{frame}
+	\frametitle{Holomorphe Funktionen sind analytisch}
+	\begin{theorem}
+		Sei $\Omega \subset \mathbb{C}$ und $f \colon \Omega \to \mathbb{C}$ holomorph.
+		Dann ist $f$ analytisch in $\Omega$ und für jedes $z_0 \in \Omega$ gilt
+		\[
+			f(z) = \sum_{n = 0}^{\infty} \frac{f^{(n)}(z_0)}{n!}(z - z_0)^n, \qquad \lvert z - z_0 \rvert < \operatorname{dist}(z_0, \partial \Omega).
+		\]
+	\end{theorem}
+	\pause
+	\begin{theorem}[Identitätssatz]
+		Sei $\Omega \subset \mathbb{C}$ offen und zusammenhängend und seien $f, g \colon \Omega \to \mathbb{C}$ analytisch in $\Omega$.
+		Falls es eine konvergente Folge $(w_k) \subset \Omega$ von paarweise verschiedenen Punkten mit Grenzwert in $\Omega$ gibt, sodass $f(w_k) = g(w_k)$ für alle $k$, so gilt $f(z) = g(z)$ für alle $z \in \Omega$.
+	\end{theorem}
+\end{frame}
+\begin{frame}
+	\frametitle{Der Residuensatz}
+	\begin{theorem}
+		Ist $f$ in einer offenen Menge $\Omega$, welche einen (positiv orientierten) Kreis $C$ (oder allgemeiner eine toy contour $C$) enthält, holomorph bis auf Polstellen\footnote{Die Definition dieser kommt später.} $z_1, \dots, z_N$ innerhalb von $C$, so gilt
+		\[
+			\int_{C} f(z) \,\mathrm{d}z = 2 \pi \iu \sum_{k=1}^{N} \operatorname{res}_{z_k} f.
+		\]
+	\end{theorem}
+	\pause
+	Hierbei bezeichnet $\operatorname{res}_{z_k} f$ das \emph{Residuum} von $f$ bei $z_k$, welches, falls $z_k$ eine Polstelle der Ordnung $n$ ist, wie folgt berechnet werden kann:\vspace*{-0.15cm}
+	\[
+		\operatorname{res}_{z_k} f = \lim_{z \to z_k} \frac{1}{(n-1)!} \left( \frac{\partial}{\partial z} \right)^{n-1} ((z - z_k)^n f(z)).
+	\]\vspace*{-0.15cm}
+	\pause
+	Definiert ist dieses als Koeffizient $a_{-1}$ in der Entwicklung
+	\[
+		f(z) = a_{-n} (z - z_k)^{-n} + \dots + a_{-1} (z - z_k)^{-1} + G(z)
+	\]
+	mit $G$ holomorph in einer Umgebung von $z_k$ (für die Existenz einer solchen Entwicklung, s. Lemma 3.2).
+\end{frame}
+\begin{frame}
+	\frametitle{Null- und Polstellen holomorpher Funktionen}
+	Seien $\Omega \subset \mathbb{C}$ offen, $f \colon \Omega \to \mathbb{C}$ holomorph mit $\not\equiv 0$ und $z_0 \in \Omega$ eine Nullstelle von $f$, d.h. $f(z_0) = 0$.
+	Dann existieren eine offene Umgebung $U \subset \Omega$ von $z_0$, eine holomorphe Funktion $g \colon U \to \mathbb{C}$ mit $g(z_0) \neq 0$ und ein eindeutiges $n \in \mathbb{N}$, sodass
+	\[
+		f(z) = (z - z_0)^n g(z) \qquad \forall z \in U.
+	\]
+	$n$ heißt \emph{Ordnung} (auch \emph{Vielfachheit}) der Nullstelle $z_0$.
+
+	\vfill
+	Verschwindet $f$ hingegen in einer Umgebung von $z_0$ nicht und ist die Funktion $\frac{1}{f}$, wenn sie durch Null bei $z_0$ fortgesetzt wird, holomorph, so heißt $z_0$ \emph{Polstelle} von $f$.
+	Die \emph{Ordnung} (auch \emph{Vielfachheit}) der Polstelle ist die Ordnung der Nullstelle der derart fortgesetzten Funktion $\frac{1}{f}$.
+\end{frame}
+\end{document}

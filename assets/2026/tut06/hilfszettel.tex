@@ -1,0 +1,306 @@
+\documentclass{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{csquotes}
+\usepackage{tikz, pgfplots}
+\usepackage{tcolorbox}
+\usepackage{footnotehyper}
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.markings}
+
+\makesavenoteenv{tcolorbox}
+\tcbset{left=0mm}
+
+% Colors which are accessible to color-blind individuals (due to Bang Wong, see https://www.nature.com/articles/nmeth.1618)
+\definecolor{Blue}{HTML}{0072b2}
+\definecolor{Vermillion}{HTML}{d55e00}
+
+% Remove section numbers
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Satz}
+\theoremstyle{definition}
+\newtheorem{example}{Beispiel}
+
+\title{Hilfszettel zur Klausurvorbereitung}
+\author{}
+\date{\vspace*{-1.25cm}}
+
+\begin{document}
+\maketitle
+\section{Obligatorischer Disclaimer}
+
+\textbf{Zu aller erst das Wichtigste: Es handelt sich bei diesem Dokument \emph{NICHT} um eine offizielle Lernempfehlung, sondern nur um einen kurzen Überblick über die Themen welche ich persönlich wichtig finde.}
+
+Ich wurde im letzten Tutorium gefragt, welche Themen wichtig für den Midterm sind und welche man dementsprechend besonders lernen sollte.
+Auf solche Fragen eine zufriedenstellende Antwort zu liefern, fällt mir persönlich immer etwas schwierig, da die idealistische Antwort -- welche ich prinzipiell vertreten würde -- letztendlich \enquote{alles} ist.
+Mir ist aber natürlich bewusst, dass dies nicht allzu viel bei der Vorbereitung weiterhilft.
+
+Daher an dieser Stelle ein Überblick zu paar Aspekten der Vorlesung.
+Ich würde davon abraten, die hier aufgeführten Themen als \enquote{Checkliste, die eine gute Note garantiert} aufzufassen.
+Es gibt keinerlei Garantie auf Vollständigkeit und es ist auch nicht das Ziel, hier noch einmal den gesamten Vorlesungsstoff zusammenzufassen.
+Stattdessen soll dieses Dokument dabei helfen, eine kurze Kontrolle darüber zu geben, ob an der ein oder anderen Stelle noch größere Lücken bestehen.
+
+Zur Verwendung würde ich empfehlen, zunächst noch einmal die Bestimmung von Singularitäten und das Berechnen von Integralen unten zu wiederholen.
+Wenn man schon etwas mehr gelernt hat, kann man zu den \enquote{Fragen zur Selbstkontrolle} übergehen.
+
+\section{Fragen zur Selbstkontrolle}
+
+Auf die folgenden Fragen sollte man meiner Meinung nach relativ schnell richtig antworten können, wenn man sehr gut vorbereitet sein möchte (nur um es noch einmal erwähnt zu haben: an dieser Stelle besteht keinerlei Anspruch auf Vollständigkeit!).
+Falls man an einer Stelle nicht die Antwort weiß, habe ich versucht darauf zu achten, dass alle Begriffe bei einer Online-Suche möglichst schnell das richtige Ergebnis liefern.
+Natürlich finden sich aber auch fast alle Antworten im Vorlesungsskript oder auf den Übungsblättern, was die ersten Anlaufstellen sein sollte.
+\begin{itemize}
+	\item Wie rechnet man mit komplexen Zahlen (z.B. wie berechnet man den Quotient zweier komplexer Zahlen)?
+	      Was sind kartesische Koordinaten und was sind Polarkoordinaten?
+	      Wie rechnet man zwischen diesen um?
+	      Was besagt die Eulersche Formel, und wie können wir $\sin(z)$ und $\cos(z)$ mithilfe von dieser in Termen von $\mathrm{e}^{\mathrm{i} z}$ und $\mathrm{e}^{-\mathrm{i} z}$ schreiben?
+	\item Was ist die Definition von Holomorphie?
+	      Welche \enquote{Rechenregeln} gelten für holomorphe Funktionen?
+	      Und was sind die Cauchy-Riemann-Gleichungen und ihre Bedeutung für Holomorphie?
+	\item Wie funktioniert Konvergenz von Potenzreihen (insbesondere der Satz von Cauchy-Hadamard und das Quotientenkriterium zur Bestimmung des Konvergenzradius)?
+	\item Was sind analytische Funktionen und was haben diese mit holomorphen Funktionen zu tun?
+	      Was besagt der Identitätssatz?
+	\item Wie ist das Kurvenintegral definiert und welche Rechenregeln gelten für dieses?
+	      Für Letzteres insbesondere:
+	      Was passiert mit dem Kurvenintegral einer holomorphen Funktion, wenn eine Stammfunktion existiert?
+	      Und wie kann man den Betrag eines Kurvenintegrals abschätzen?
+	\item Wie kann man die Verbindungsstrecke zwischen zwei komplexen Zahlen $z, w \in \mathbb{C}$ und beliebige Kreisbögen in der komplexen Ebene parametrisieren?
+	\item Was ist der Wert des Integrals $\int_{\gamma} z^n \,\mathrm{d}z$ für $n \in \mathbb{Z}$, wenn $\gamma$ durch den Einheitskreis gegeben ist?
+	\item Was ist Homotopie und wie hängt diese mit Kurvenintegralen zusammen?
+	\item Resultate zur Berechnung von Kurvenintegralen holomorpher Funktionen über geschlossene Kurven:
+	      Was besagen der Satz von Cauchy, die Cauchysche Integralformel und der Residuensatz, und was sind ihre Voraussetzungen?
+	\item Konsequenzen aus der Cauchyschen Integralformel: Was sind Cauchy-Abschätzungen, der Satz von Liouville und wie folgt der Fundamentalsatz der Algebra aus Letzterem?
+	      Sind lokal gleichmäßige Grenzwerte holomorpher Funktionen holomorph?
+	\item Ist die Abbildung $z \mapsto \cos(z)$ auf $\mathbb{C}$ beschränkt?
+	\item Wie funktioniert die Klassifikation isolierter Singularitäten?
+	      Wie bestimmt man die Art einer Singularität (s. unten)?
+	      Was besagen der Riemannsche Hebbarkeitssatz und der Satz von Casorati--Weierstraß?
+	\item Wie kann man Residuen berechnen?
+	      Warum ist das Residuum einer hebbaren Singularität stets $0$?
+	      Gib ein Beispiel an, welches zeigt, dass die Umkehrung nicht gilt, also eine nicht-hebbare Singularität mit Residuum $0$.
+	\item Was besagen Argumentprinzip, Offenheitsprinzip und Maximumprinzip?
+	      Wie wendet man den Satz von Rouch\'{e} an?
+	\item Was ist der Hauptzweig des Logarithmus, wie rechnet man mit diesem und wie funktionieren Logarithmen allgemein im Komplexen?
+\end{itemize}
+
+\section{Bestimmung isolierter Singularitäten}
+
+Haben wir eine Funktion $f$ gegeben, so können wir folgendermaßen vorgehen, um die Singularitäten mitsamt ihrer Art zu bestimmen:
+
+Zunächst bestimmen wir Kandidaten für bzw. die Lage der Singularitäten.
+Dieser Schritt ist vielleicht im Vergleich zu den späteren etwas weniger konkret.
+Grundsätzlich ist hier ein wenig die Idee, dass wir diejenigen Punkte suchen möchten, wo der Funktionsterm nicht direkt ausgewertet werden kann oder Holomorphie \enquote{kaputtgeht}.
+Dies kann im Allgemeinen sehr unterschiedlich aussehen, aber vielleicht die häufigste Problematik ist Division durch null.
+So würden wir bei der Funktion $f(z) = \cos(\tfrac{1}{z})$ recht schnell den Punkt $z = 0$ als Singularität erkennen, wohingegen dieses $f$ bei allen $z \neq 0$ gemäß der bekannten Rechenregeln für holomorphe Funktionen holomorph ist.
+Ähnlich sind die ersten Kandidaten bei einer Funktion wie $\frac{\mathrm{e}^{z} \sin(z)}{z (1 + z^4)}$ genau die Nullstellen des Nennerpolynoms.
+
+Haben wir erst einmal die Kandidaten $z_0, z_1, \dots$ gefunden, geht es darum, ihre Art zu bestimmen.
+Wir formulieren das Vorgehen hier nur für $z_0$, aber natürlich funktioniert es für jede beliebige Singularität.
+
+Ich würde empfehlen, zunächst zu versuchen, intuitiv die Art der Singularität zu bestimmen (das ist vielleicht ein wenig damit vergleichbar, dass man, bevor man das Majoranten- oder Minorantenkriterium verwendet, eigentlich schon verstanden haben muss, ob die gegebene Reihe konvergiert oder divergiert).
+Hierfür gibt es viele verschiedene Möglichkeiten, an dieser Stelle seien stichprobenweise nur drei genannt:
+\begin{itemize}
+	\item \enquote{Kürzungsargumente}: Diese sind vielleicht mit die hilfreichste Methode.
+	      Viele der Funktionen mit Singularitäten, denen wir begegnen, sind von der Form $\frac{g(z)}{h(z)}$ für holomorphe Funktionen $g$ und $h$, und wie zuvor erwähnt sind hier die offensichtlichsten Kandidaten für Singularitäten genau die Nullstellen von $h$.
+	      Nun könnte aber $g$ an genau denselben Stellen ebenfalls eine Nullstelle haben, sodass sich welche wegkürzen und die Ordnung der Polstelle von $\frac{g(z)}{h(z)}$ strikt kleiner ist, als die Ordnung der Nullstelle von $h$.
+
+	      Hierfür kurz ein paar Beispiele: $\frac{1}{z^2}$ besitzt offensichtlicher Weise eine doppelte Polstelle bei $0$, da der Nenner dort eine doppelte Nullstelle besitzt und sich nichts wegkürzt.
+	      $\frac{z - \mathrm{i}}{1 + z^2}$ besitzt, wie man nach Faktorisieren des Nenners gut sieht, zwar eine einfache Polstelle bei $-\mathrm{i}$, aber nur eine hebbare Singularität bei $\mathrm{i}$, da sich die einfache Nullstelle des Nenners bei $\mathrm{i}$ mit der des Zählers kürzt.
+	      Die Funktion $\frac{z^2}{1 - \mathrm{e}^{z^5}}$ besitzt eine dreifache Polstelle bei $0$, da der Nenner eine fünffache Nullstelle bei $0$ besitzt (dies sieht man gut, wenn man den Nenner als Potenzreihe entwickelt), welche nach Kürzen mit der doppelten Nullstelle im Zähler nur noch wie behauptet eine dreifache Polstelle übrig lässt.
+	\item Entwickeln von Termen als Potenzreihen/Laurent-Reihen: Ein weiteres nützliches Werkzeug ist das Entwickeln von Termen als Potenzreihen (wie beim letzten Beispiel für den Term $1 - \mathrm{e}^{z^5}$) oder als Laurent-Reihen.
+	      Für Letztere verweisen wir an dieser Stelle auf die recht ausführlichen Notizen im Vorlesungskurs.
+	      An dieser Stelle sei auch darauf hingewiesen, dass Laurent-Reihen auch direkt als Werkzeug zur Klassifikation von Singularitäten verwendet werden können, zum Beispiel kann mithilfe dieser direkt erkannt werden, dass $\sin(\frac{1}{z})$ eine wesentliche Singularität im Ursprung besitzt.
+	      Das zentrale Resultat ist hier Satz 3.7 in den zuvor erwähnten Notizen.
+	\item Skizzen: Diese sind vielleicht im Allgemeinen aufgrund der Schwierigkeit, händisch vier-dimensionale Graphen zu skizzieren, nicht immer hilfreich\footnote{An sogenannten \emph{domain colorings} kann man beispielsweise zwar schon sehr schön die Art von Singularitäten ablesen, allerdings sind sie dafür auch sehr schwierig händisch zu erstellen.}.
+	      Für Funktionen wie $z \mapsto \mathrm{e}^{1/z}$ oder $z \mapsto \sin(\frac{1}{z})$ genügt aber eine Skizze auf einem Intervall, welches den Ursprung enthält, bereits, um die wesentlichen Singularitäten bei $0$ als solche zu erkennen (beachte hierfür auch die unten erwähnten Kriterien):
+	      \begin{center}
+		      \begin{tikzpicture}
+			      \begin{axis}[
+					      axis lines = middle,
+					      xmin = -2, xmax = 2,
+					      ymin = -1.1, ymax = 5,
+					      samples = 300,
+					      legend pos=north west
+				      ]
+				      \addplot[Vermillion, thick, smooth, samples=1000, domain=-100:-0.5]({1/x}, {sin(deg(x))});
+				      \addplot[Blue, very thick, domain = -2:-0.001, smooth] {exp(1/x)};
+
+				      \addlegendentry{$\sin(\frac{1}{x})$}
+				      \addlegendentry{$\mathrm{e}^{1/x}$}
+
+				      \addplot[Blue, very thick, domain=0.2:2, smooth] {exp(1/x)};
+				      \addplot[Vermillion, thick, smooth, samples=1000, domain=0.5:100]({1/x}, {sin(deg(x))});
+			      \end{axis}
+		      \end{tikzpicture}
+	      \end{center}
+\end{itemize}
+Um unsere Vermutung über die Art der Singularität $z_0$ zu beweisen, können wir dann eines der folgenden aus der Vorlesung bekannten Kriterien verwenden (das geht natürlich auch, wenn wir noch keine Intuition hinsichtlich der Art der Singularität haben, nur müssen wir dann gegebenenfalls mehrere der Kriterien und dementsprechend manche umsonst anwenden):
+\begin{tcolorbox}
+	\begin{enumerate}[label=(\arabic*)]
+		\item Existiert der Grenzwert $\lim_{z \to z_0} f(z)$ in $\mathbb{C}$, so ist $z_0$ eine hebbare Singularität.
+		\item Gilt hingegen $\lim_{z \to z_0} |f(z)| = + \infty$, so ist $z_0$ eine Polstelle.
+		\item Ist weder die Existenz von $\lim_{z \to z_0} f(z)$ noch $\lim_{z \to z_0} |f(z)| = + \infty$ gegeben, so ist $z_0$ eine wesentliche Singularität.
+		      Dies kann man beispielsweise überprüfen, indem man zwei Folgen $(z_k)_{k \in \mathbb{N}}, (w_k)_{k \in \mathbb{N}} \subset \mathbb{C}$ bestimmt, für welche $\lim_{k \to \infty} z_k = \lim_{k \to \infty} w_k = z_0$, aber $\lim_{k \to \infty} f(z_k) \neq \lim_{k \to \infty} f(w_k)$ (insbesondere existieren diese Grenzwerte) gilt.\footnote{Das \enquote{beispielsweise} kann man sich an dieser natürlich auch sparen, da der Satz von Casorati-Weierstraß die Existenz solcher Folgen $(z_k)_{k \in \mathbb{N}}$ und $(w_k)_{k \in \mathbb{N}}$ garantiert -- in der Tat könnte man in der Theorie sogar jedes beliebige Paar komplexer Zahlen als Grenzwerte von $(f(z_k))_{k \in \mathbb{N}}$ und $(f(w_k))_{k \in\mathbb{N}}$ wählen, wobei in der Praxis selbstverständlich nützlicher ist, die ersten zwei geeigneten Folgen zu wählen, die einem einfallen.}
+	\end{enumerate}
+\end{tcolorbox}
+Vor allem mit Hinblick auf den für unsere Zwecke relevantesten Grund, isolierte Singularitäten zu bestimmen, nämlich die Berechnung von Integralen mithilfe des Residuensatzes, ist das zweite Kriterium allerdings ein wenig unbefriedigend.
+Schließlich sagt es uns absolut nichts über die Ordnung der Polstelle, welche wir brauchen, um die Residuenformel (Lemma 3.3 im Vorlesungsskript) anzuwenden.
+Abhilfe schafft hier folgende Verfeinerung des Kriteriums (welche man kurz -- mindestens durch einen Verweis auf Lemma 3.2, s.u. -- begründen sollte, wenn man sie verwendet):
+\begin{tcolorbox}
+	\begin{itemize}
+		\item[(2')] $f$ besitzt genau dann eine Polstelle der Ordnung $n \in \mathbb{N}$ bei $z_0$, falls der Grenzwert $\lim_{z \to z_0} (z - z_0)^n f(z)$ in $\mathbb{C}$ existiert und $\neq 0$ ist.
+	\end{itemize}
+\end{tcolorbox}
+Dies folgt letzten Endes mehr oder weniger aus der Definition einer Polstelle der Ordnung $n$: Gemäß dieser gibt es eine holomorphe Funktion $h$ mit $h(z_0) \neq 0$, sodass $f(z) = (z - z_0)^{-n} h(z)$ (vgl. Lemma 3.2 im Skript).
+Indem wir auf beiden Seiten mit $(z - z_0)^{n}$ multiplizieren, erhalten wir wegen Stetigkeit von $h$, dass
+\[
+	(z - z_0)^n f(z) = h(z) \overset{z \to z_0}{\longrightarrow} h(z_0) \neq 0.
+\]
+Für $m \neq n$ gilt hingegen gemäß der obigen Darstellung von $f$
+\[
+	\lim_{z \to z_0} |(z - z_0)^m f(z)| = \begin{cases} 0 & \text{falls } m > n , \\ \infty & \text{falls } m < n, \end{cases}
+\]
+denn im letzteren Fall besitzt $z \mapsto (z - z_0)^m f(z)$ bei $z_0$ eine Polstelle der Ordnung $n - m$.
+
+\subsection{TL;DR}
+
+Letztendlich kann das obige Vorgehen in den folgenden drei Schritten zusammengefasst werden:
+\begin{tcolorbox}
+	\begin{enumerate}
+		\item Bestimme die Lage aller Singularitäten.
+		\item Überlege für jede, um was für eine Singularität es sich handeln könnte.
+		\item Beweise die Vermutung aus Schritt 2, zum Beispiel mit einem der Kriterien (1), (2'), (3) oder einer Laurent-Reihen-Entwicklung.
+	\end{enumerate}
+\end{tcolorbox}
+
+\section{Berechnung von Kurvenintegralen}
+
+Wir beschreiben noch einmal kurz das grobe Vorgehen, um ein Kurvenintegral $\int_{\gamma} f(z) \,\mathrm{d}z$ zu berechnen.
+Hierbei beschränken wir uns an dieser Stelle auf den Fall von geschlossenen Kurven $\gamma$ und \enquote{nett genuge} Funktionen $f$.
+
+Je nachdem, wie eng \enquote{nett genug} gefasst wird, kann das Integral schneller oder langsamer ausgewertet werden:
+Ist $f$ holomorph auf einer offenen Menge $\Omega$, die $\gamma$ mitsamt dem vom $\gamma$ eingeschlossenen Bereich\footnote{Dieser Zusatz schließt aus, dass $f$ beispielsweise holomorph bis auf eine Singularität, die von $\gamma$ umlaufen wird, ist. Zugegebenermaßen ist die Formulierung \enquote{von $\gamma$ eingeschlossener Bereich} etwas vage, und eine mögliche präzisere Formulierung wäre vorauszusetzen, dass $\Omega$ ein sogenanntes Elementargebiet, also zum Beispiel sternförmig ist, allerdings hatten wir meines Wissens diesen Begriff nicht in der Vorlesung.} enthält, so verschwindet das Integral gemäß dem Satz von Cauchy.
+Besitzt $f$ nur eine einzige Polstelle innerhalb einer solchen Menge $\Omega$, so kann man $f$ ein wenig umschreiben und die Cauchysche Integralformel anwenden.
+Alternativ kann man in beiden Fällen auch den Residuensatz verwenden, der die beiden vorherigen Resultate verallgemeinert, und welcher auch für den Fall von abzählbar vielen isolierten Singularitäten geeignet ist.
+Das Vorgehen für die konkrete Anwendung des Residuensatzes geben wir nun an, aber davor noch kurz der Hinweis, dass man die Voraussetzungen (s. Skript) der soeben genannten drei Sätze stets zumindest kurz überprüfen sollte.
+Jetzt zum Vorgehen zur Anwendung des Residuensatzes:
+\begin{tcolorbox}
+	\begin{enumerate}
+		\item Bestimme die Lage (aber noch nicht zwingend die genaue Art!) aller Singularitäten von $f$.
+		\item Fertige eine Skizze von der Integrationskurve $\gamma$ an und trage in diese die zuvor bestimmten Singularitäten ein.
+		\item Überprüfe, welche der Singularitäten innerhalb der Integrationskurve liegen (und für allgemeinere Kurven als zum Beispiel positiv orientierte Kreise oder Rechtecke, wie oft und in welche Richtung die Singularitäten innerhalb von $\gamma$ umlaufen werden).
+		\item Bestimme nur für diejenigen Singularitäten, die von $\gamma$ umlaufen werden die Art\footnote{Der Grund weshalb wir dies erst hier tun möchten, ist, dass wir uns die Arbeit für alle Singularitäten, welche nicht von $\gamma$ umlaufen werden, schlichtweg sparen können, da diese (z.B. wegen Homotopie-Invarianz des Kurvenintegrals oder allgemeiner Formulierung des Residuensatzes) keinen Beitrag zum Integral leisten.} (s. oben für die Anleitung hierfür) und das zugehörige Residuum.
+
+		      Um das Residuum zu berechnen, können wir im Fall von Polstellen die Formel aus der Vorlesung verwenden, für wesentliche Singularitäten die Laurent-Reihen-Entwicklung um diese bestimmen und das Residuum ablesen (das geht natürlich für alle Singularitäten, also auch Polstellen und hebbare Singularitäten, ist aber eventuell aufwändiger als die anderen Methoden) und für hebbare Singularitäten (mit einer kurzen Begründung!) direkt feststellen, dass das Residuum $0$ ist.
+		      Auch hilfreich können hier Rechenregeln für das Residuum sein, wie etwa Linearität.
+		\item Nun kommt der Residuensatz ins Spiel und gibt uns in Abhängigkeit der Residuen den Wert des Integrals.
+	\end{enumerate}
+\end{tcolorbox}
+
+Oft ist die Berechnung eines Kurvenintegrals eine Hilfskonstruktion, welche der Berechnung eines reellen Integrals dient (vgl. die zahlreichen Beispiele aus der Vorlesung und den Übungen).
+In diesem Fall würde man an dieser Stelle noch ein Grenzwert-Argument durchführen, und gewisse Parameter, von denen die Integrationskurve $\gamma$ abhängt, gegen bestimmte Werte (typischerweise $\infty$ oder $0$) laufen lassen, also:
+\begin{tcolorbox}
+	\begin{enumerate}
+		\item[6.] Bilde (falls notwendig) einen geeigneten Grenzwert.
+	\end{enumerate}
+\end{tcolorbox}
+Die Paradebeispiele sind Halbkreise, deren Radius und Rechtecke, deren Breite wir gehen $\infty$ laufen lassen.
+Hierfür sollte man wissen, wie man Kurvenintegrale abschätzen kann (entweder man parametrisiert die Kurve und schätzt dann das Integral mit den üblichen Methoden ab, oder man verwendet die Standardabschätzung für Wegintegrale, s. Lemma 1.20 im Skript).
+In diesem Kontext auch noch ein Hinweis auf einen typischen Fehler: Im Allgemeinen gilt \emph{\textbf{NICHT}}
+\[
+	\left|\int_{\gamma} f(z) \,\mathrm{d}z \right| \le \int_{\gamma} |f(z)| \,\mathrm{d}z, \tag{\textbf{falsch!}}
+\]
+man betrachte beispielsweise den Fall, wenn $f(z) = z^{-1}$ und $\gamma$ der Einheitskreis ist.
+Dies steht natürlich in keinerlei Konflikt mit der aus der reellen Analysis oder Maßtheorie bekannten Abschätzung, da auf der rechten Seite in der obigen falschen Abschätzung implizit der Term $z'(t)$ für eine Parametrisierung $z(t)$ von $\gamma$ noch ohne Betrag im Integranden steht.
+
+\subsection{Ein Beispiel}
+
+Zum Abschluss betrachten wir noch ein kurzes Beispiel, bei welchem wir folgendes Integral auswerten, indem wir über einen geeigneten Halbkreis integrieren:
+\[
+	\int_{-\infty}^{\infty} \frac{1}{(1 + x^2)^{n + 1}} \,\mathrm{d}x, \qquad n \in \mathbb{N}.
+\]
+Hierfür folgen wir den obigen Schritten, wobei man das normalerweise vermutlich eher nicht so \enquote{rezeptartig} aufschreiben würde:
+\begin{enumerate}
+	\item Unser Integrand ist durch die Funktion
+	      \[
+		      f(z) = \frac{1}{(1 + z^2)^{n + 1}}
+	      \]
+	      gegeben.
+	      Da der Nenner überall holomorph ist, sind die einzigen \enquote{Problemstellen} die Nullstellen des Nenners.
+	      Wir können diesen folgendermaßen faktorisieren:
+	      \[
+		      (1 + z^2)^{n + 1} = (z + \mathrm{i})^{n + 1} (z - \mathrm{i})^{n - 1}.
+	      \]
+	      Somit sind die Singularitäten der gegebenen Funktion genau $-\mathrm{i}$ und $\mathrm{i}$.
+	\item Für dieses Beispiel integrieren wir über den Halbkreis $\gamma_{R} = [-R, R] \cup C_R$ in der oberen Halbebene mit Radius $R > 1$ und Mittelpunkt $0$, wobei $C_R = \{R \mathrm{e}^{\mathrm{i} \varphi} : \varphi \in [0, \pi]\}$.
+	      (Man könnte aber auch den Halbkreis in der unteren Halbebene mit gleichem Radius und Mittelpunkt betrachten.)
+	      Damit könnte eine Skizze beispielsweise folgendermaßen aussehen:
+	      \begin{center}
+		      \begin{tikzpicture}
+			      \begin{axis}[
+					      axis lines=middle,
+					      xtick = {-2, 2}, ytick = {2},
+					      xticklabels = {$-R$, $R$}, yticklabels={$R$},
+					      yticklabel style={yshift=5pt},
+					      xmin = -2.5, xmax = 2.5,
+					      ymin=-1, ymax=2.5,
+					      x=1.5cm, y=1.5cm
+				      ]
+				      \begin{scope}[very thick, Vermillion, decoration={markings,
+								      mark=at position 0.25 with {\arrow{>}},
+								      mark=at position 0.75 with {\arrow{>}},
+							      }]
+					      \draw[postaction=decorate] (-2,0) -- (2,0);
+					      \draw[postaction={decorate}] (axis cs:2,0) arc(0:180:2);
+				      \end{scope}
+				      \fill[Blue] (axis cs:0, 0.5) circle (2pt) node[right] {$\mathrm{i}$};
+				      \fill[Blue] (axis cs:0, -0.5) circle (2pt) node[right] {$-\mathrm{i}$};
+			      \end{axis}
+		      \end{tikzpicture}
+	      \end{center}
+	\item Wie aus der Skizze ersichtlich ist, wird nur die Singularität $\mathrm{i}$ von $\gamma_R$ umlaufen.
+	\item Wir können aus obiger Faktorisierung des Nenners direkt ablesen, dass dieser bei $\mathrm{i}$ eine $n+1$-fache Nullstelle besitzt.
+	      Da der Zähler konstant $1$ ist, besitzt also der Integrand eine $n+1$-fache Polstelle bei $\mathrm{i}$.
+	      (An dieser Stelle kann man natürlich auch direkt feststellen, dass dasselbe Argument für die Singularität bei $-\mathrm{i}$ funktioniert; allerdings müssen wir uns über diese mit der von uns gewählten Integrationskurve keine Gedanken machen.)
+
+	      Um das Residuum zu berechnen, verwenden wir die aus der Vorlesung bekannte Formel:
+	      \begin{align*}
+		      \operatorname{res}_{\mathrm{i}} f & = \lim_{z \to \mathrm{i}} \frac{1}{((n + 1) - 1)!} \left( \frac{\partial}{\partial z} \right)^{(n + 1) - 1} \left( (z - \mathrm{i})^{n + 1} f(z) \right)                                                                         \\
+		                                        & = \lim_{z \to \mathrm{i}} \frac{1}{n!} \left( \frac{\partial}{\partial z} \right)^{n} (z + \mathrm{i})^{-(n + 1)} = \lim_{z \to \mathrm{i}} \frac{1}{n!} (-(n + 1)) (-(n + 2)) \cdots (-(n + n)) (z + \mathrm{i})^{-(n + 1 + n)} \\
+		                                        & = \frac{(2 n)!}{(n!)^2} (-1)^{n} \lim_{z \to \mathrm{i}} (z + \mathrm{i})^{-(2 n + 1)} = \frac{(2 n)!}{(n!)^2} (-1)^{n} (2 \mathrm{i})^{-(2 n + 1)} = \frac{(2 n)!}{(n!)^2} (-1)^{n} (-1)^{n} \frac{1}{2^{2 n} 2 \mathrm{i}}     \\
+		                                        & = \frac{1}{2 \mathrm{i}} \frac{(2 n)!}{2^{2 n} (n!)^2}.
+	      \end{align*}
+	\item Da $f$ auf $\mathbb{C} \setminus \{-\mathrm{i}, \mathrm{i}\}$ holomorph ist, $\gamma_R$ geschlossen ist und $\gamma_R$ nur die Singularität $\mathrm{i}$ enthält, folgt gemäß Residuensatz
+	      \[
+		      \int_{\gamma_R} f(z) \,\mathrm{d}z = 2 \pi \mathrm{i} \operatorname{res}_{\mathrm{i}} f = 2 \pi \mathrm{i} \frac{1}{2 \mathrm{i}} \frac{(2 n)!}{2^{2 n} (n!)^2} = \pi \frac{(2 n)!}{2^{2 n} (n!)^2}.
+	      \]
+	\item In diesem Fall möchten wir noch zeigen, dass im Grenzwert $R \to \infty$ das Integral über den Halbkreisbogen verschwindet, um ein Ergebnis für das ursprünglich gesuchte Integral zu erhalten.
+	      In diesem Fall genügt hierfür die Standardabschätzung gemeinsam mit der umgekehrten Dreiecksungleichung\footnote{
+	      Hierbei bezeichnet $L(C_R)$ die Länge des Halbkreisbogens ($= \pi R$), und die zweite Abschätzung folgt wie erwähnt mit der umgekehrten Dreiecksungleichung: Für alle $z \in C_R$ gilt $|z| = R$, also $|z^2 + 1| \ge ||z|^2 - 1| = R^2 - 1$.
+	      Wegen Monotonie der Abbildung $x \mapsto x^{n + 1}$ auf $\mathbb{R}_{\ge 0}$ folgt $|z^2 + 1|^{n + 1} \ge (R^2 - 1)^{n + 1}$ und damit wie behauptet $|f(z)| \le \frac{1}{(R^2 - 1)^{n + 1}}$ für alle $z \in C_R$.
+	      }:
+	      \[
+		      \left| \int_{C_R} f(z) \,\mathrm{d}z \right| \le L(C_R) \sup_{z \in C_R} |f(z)| \le \frac{\pi R}{(R^2 - 1)^{n + 1}} \overset{R \to \infty}{\longrightarrow} 0.
+	      \]
+	      Insgesamt folgt dann im Grenzwert $R \to \infty$, dass
+	      \[
+		      \pi \frac{(2 n)!}{2^{2 n} (n!)^2} = \int_{\gamma_R} f(z) \,\mathrm{d}z = \int_{-R}^{R} f(z) \,\mathrm{d}z + \int_{C_R} f(z) \,\mathrm{d}z \overset{R \to \infty}{\longrightarrow} \int_{-\infty}^{\infty} f(z) \,\mathrm{d}z,
+	      \]
+	      also (wegen Eindeutigkeit des Grenzwerts)
+	      \[
+		      \int_{-\infty}^{\infty} \frac{1}{(1 + x^2)^{n + 1}} \,\mathrm{d}x = \pi \frac{(2 n)!}{2^{2 n} (n!)^2}.
+	      \]
+\end{enumerate}
+Viel Erfolg beim Midterm! \faSmile[regular]
+\end{document}
