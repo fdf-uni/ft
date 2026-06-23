@@ -1,29 +1,23 @@
 ---
-title: Tutorium 9
+title: Tutorium 8
 ---
 
-[Foliensatz](../../assets/2025/tut09/presentation.pdf)
-
 ## Kurzprotokoll
-Nach einer Besprechung des obigen Foliensatzes wurden zunächst Aufgaben 3 und 4 sowie zuletzt Aufgabe 2 des aktuellen Arbeitsblattes besprochen.
+
+Aus Zeitgründen und da dies besser zum Tutoriumsblatt passte, gab es in dieser Woche keinen Foliensatz und wir wiederholten stattdessen relevante Resultate direkt während der Besprechung der Aufgaben.
 
 ## Zum Mitnehmen
 
+### Aufgabe 1
+- Bestimmen von Laurent-Reihen gebrochen-rationaler Funktionen mittels der geometrischen Reihe.
+    Diesbezüglich insbesondere die Intuition basierend auf geometrischen Skizzen, wann man hierbei eine Bedingung der Form $$\lvert z - z_0 \rvert < C$$ und wann man eine Abschätzung der Form $$c < \lvert z - z_0 \rvert$$ verwenden möchte (und dementsprechend Terme mit nicht-negativen oder nicht-positiven Exponenten erhält).
+- Zur Partialbruchzerlegung, welche hierbei auch oft sehr nützlich ist, sei an dieser Stelle auf ein [entsprechendes Dokument](../../assets/2025/tut05/partialbruchzerlegung.pdf) aus dem Vorjahr verwiesen (insbesondere Beispiel 3 ist bei Anwendungen wie in dieser Aufgabe wahrscheinlich von Interesse).
+
 ### Aufgabe 2
-Ich denke hier sind vor allem die Eigenschaften gebrochen linearer Transformationen relevant, sowie die Feststellung, dass diese auch aus geometrischer Sicht sehr sinnvoll sind (vgl. Aufgabenteil (iv)).
+Anwendung des Maximumprinzips zur Bestimmung von Maxima holomorpher Funktionen auf offenen zusammenhängenden Mengen.
 
 ### Aufgabe 3
-- Das Lemma von Schwarz kann mittels konformer Äquivalenz auch Aussagen über andere Mengen liefern.
-
-### Aufgabe 4
-Für Teil (i):
-- (Mögliche Teil-)Intuition zu Blaschke-Faktoren: Für jedes $$\alpha \in \mathbb{D}$$ ist $$\psi_{\alpha}$$ eine konforme Abbildung $$\mathbb{D} \to \mathbb{D}$$, welche "die Rollen von $$0$$ und $$\alpha$$ vertauscht".
-- Geometrische Überlegung zum Lemma von Schwarz: Entweder wandert unter der Abbildung jeder Punkt (bis auf $$0$$) näher zum Ursprung oder es handelt sich bei der Abbildung nur um eine Rotation der Kreisscheibe.
-    In diesem Fall kann diese Vorstellung recht viel helfen: Da wir einen Fixpunkt ungleich dem Ursprung haben, der also insbesondere nicht näher zum Ursprung geht, muss es sich um eine Rotation handeln, und wieder aufgrund der Fixierung dieses Punktes muss diese trivial sein.
-
-Für Teil (ii):
-- Um holomorphe Funktionen auf einer gegebenen offenen Menge zu analysieren, kann es hilfreich sein, konforme Äquivalenz auszunutzen. In diesem Fall nutzen wir, dass wenn $$U$$ und $$V$$ konform äquivalent sind, entweder sowohl $$U$$ als auch $$V$$ die Fixpunkteigenschaft für holomorphe Funktionen besitzen oder beide nicht.
-    Dann wird die Aufgabe deutlich leichter, weil es signifikant einfachere fixpunktfreie, holomorphe Abbildungen $$H \to H$$ als $$\mathbb{D} \to \mathbb{D}$$ gibt.
+Ich denke hier sind vor allem die Eigenschaften von [Möbiustransformationen](https://de.wikipedia.org/wiki/M%C3%B6biustransformation#M%C3%B6biustransformation_als_Automorphismus_der_riemannschen_Zahlenkugel) relevant, sowie die Feststellung, dass diese auch aus geometrischer Sicht sehr sinnvoll sind (vgl. Aufgabenteil (iv)).
 
 ## Fun Facts
 
