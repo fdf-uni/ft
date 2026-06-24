@@ -33,6 +33,8 @@ Wichtiger sind vermutlich eher die einzelnen Tutoriumsseiten (s. u.), welche wie
 - [Tutorium 5](./tutorials/2026/tut05.md)
 - [Tutorium 6](./tutorials/2026/tut06.md)
 - [Tutorium 7](./tutorials/2026/tut07.md)
+- [Tutorium 7.5](./tutorials/2026/tut07p5.md)
+- [Tutorium 8](./tutorials/2026/tut08.md)
 
 Im Folgenden finden sich auch noch die Unterlagen aus dem Vorjahr.
 Zugegebenermaßen wird ein großer Teil von diesen direkt kopiert werden, aber nichtsdestotrotz finden sich vielleicht doch ein paar interessante zusätzliche Informationen (gerade Tutorium 0 hat dieses Jahr nicht stattgefunden). :)
